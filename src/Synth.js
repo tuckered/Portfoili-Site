@@ -13,15 +13,11 @@ export default class Synth extends React.Component {
     }
   } 
   
-  
   handleChange(event) {
-    // var letter = event.target.textContent
     event.persist()
     this.setState( () => {
-      // console.log(event.charCode)
       return {code: event.charCode, letter: event.target.textContent, type: event.type}
     })
-   
     this.basicSynth()
   }
   
@@ -34,14 +30,10 @@ export default class Synth extends React.Component {
       103: "G4"
     }
     var synth = new Tone.FMSynth().toMaster()
-    // console.log(keyBoard[this.state.code])
-    // console.log(this.state.code)
-    console.log(this.state.type)
+    // console.log(this.state.type)
     if (this.state.type === 'click') {
-      // console.log(event.Type)
       return synth.triggerAttackRelease(this.state.letter, 1)
     } else if (this.state.type === 'keypress') {
-      // console.log(event.Type)
       return synth.triggerAttackRelease(keyBoard[this.state.code], 1)
     }
   }
@@ -55,7 +47,6 @@ export default class Synth extends React.Component {
     <button onClick={this.handleChange}>F4</button>
     <button onClick={this.handleChange}>G4</button>
     <input type="text" onKeyPress={this.handleChange}/>
-    
   </div>
   }
 }
