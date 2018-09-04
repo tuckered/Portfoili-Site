@@ -1,57 +1,61 @@
-import 'p5/lib/addons/p5.sound'
-import 'p5/lib/addons/p5.dom'
-import p5 from "p5"
+import React from 'react'
+import Tone from 'tone'
 
-export default function Synth (p) {
-  var sineWave
-  var squareWave
+export default class Synth extends React.Component {
   
-  var button
-  // var slider
-  var playing = false
-  // var waveType = ''
-  var volume
-  var env
+  constructor() {
+    super()
+    this.handleChange = this.handleChange.bind(this)
+    this.state = {
+      code: '',
+      letter: '',
+      type: ''
+    }
+  } 
   
-  p.setup = function () {
-    p.createCanvas(100, 100)
-    p.sine()
-    p.square()
-    volume = new p.Amplitude()
-    // button = p.createButton('play/pause')
-    // button.mousePressed(p.playEnv)
-    // masterVol = createSlider(0, 10, [1], [0])
-    // masterVolume(masterVol.value(), [1], [1])
-    env = new p.Env()
-    env.setADSR(0.5, 0.3, 0.5, 0.5)
-    env.setRange(0.8, 0)
+  
+  handleChange(event) {
+    // var letter = event.target.textContent
+    event.persist()
+    this.setState( () => {
+      // console.log(event.charCode)
+      return {code: event.charCode, letter: event.target.textContent, type: event.type}
+    })
+   
+    this.basicSynth()
   }
   
-  
-  p.square = function () {
-    squareWave = new p.Oscillator()
-    squareWave.setType('sine')
-    squareWave.start()
-    squareWave.freq(440)
-    squareWave.amp(env)
-    p.squarePitch = p.createSlider(20, 500, 200)
-    p.squareVolume = p.createSlider(0, 2, 0.5, 0)
-  }
-  
-  p.draw = function () {
-    // sineWave.freq(sinePitch.value())
-    sineWave.amp(env)
-  
-    // squareWave.freq(squarePitch.value())
-    squareWave.amp(env)
-  
-    if (playing) {
-      p.background(255, 0, 255)
-    } else {
-      p.background(51)
+  basicSynth() {
+    let keyBoard = {
+      97: "C4",
+      115: "D4",
+      100: "E4",
+      102: "F4",
+      103: "G4"
+    }
+    var synth = new Tone.FMSynth().toMaster()
+    // console.log(keyBoard[this.state.code])
+    // console.log(this.state.code)
+    console.log(this.state.type)
+    if (this.state.type === 'click') {
+      // console.log(event.Type)
+      return synth.triggerAttackRelease(this.state.letter, 1)
+    } else if (this.state.type === 'keypress') {
+      // console.log(event.Type)
+      return synth.triggerAttackRelease(keyBoard[this.state.code], 1)
     }
   }
-  p.playEnv = function () {
-    env.play()
+
+  render() {
+    return <div>
+    <h1>Synth</h1>
+    <button onClick={this.handleChange}>C4</button>
+    <button onClick={this.handleChange}>D4</button>
+    <button onClick={this.handleChange}>E4</button>
+    <button onClick={this.handleChange}>F4</button>
+    <button onClick={this.handleChange}>G4</button>
+    <input type="text" onKeyPress={this.handleChange}/>
+    
+  </div>
   }
 }

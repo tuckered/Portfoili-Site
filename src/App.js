@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Link, Switch } from 'react-router-dom'
 import P5Wrapper from 'react-p5-wrapper'
 import Sketch from './Sketch'
+import Tone from 'tone'
 import Home from './Home'
 import About from './About'
 import Synth from './Synth'
@@ -27,7 +28,7 @@ class App extends Component {
             <Route exact path="/sketch" 
               render={ () => <P5Wrapper sketch={Sketch} /> } />
             <Route exact path="/synth"
-              render={ () => <P5Wrapper synth={Synth} /> } />
+              render={ () => <Synth /> } />
           </Switch>
         </main>
       </div>
