@@ -9,7 +9,7 @@ import Sketch from './Pages/Sketch/Sketch'
 import Particles from './Pages/Particles/Particles'
 import Visualise from './Pages/Visualise/Visualise'
 import TodoList from './Pages/TodoList/TodoList'
-import Clock from './Pages/Clock/Clock'
+import DigiClock from './Pages/Clock/DigiClock'
 import Weather from './Pages/WeatherWidget/Weather'
 
 class App extends Component {
@@ -45,7 +45,7 @@ class App extends Component {
             <Route exact path="/todoList"
               render={ () => <TodoList /> } />
             <Route exact path="/clock"
-              render={ () => <Clock /> } />
+              render={ () => <DigiClock /> } />
               <Route exact path="/weather"
               render={ () => <Weather /> } />
           </Switch>

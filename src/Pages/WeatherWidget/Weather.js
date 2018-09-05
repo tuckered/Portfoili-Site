@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Forecast from './Forecast'
 
 export default class Weather extends React.Component {
 
@@ -8,7 +9,8 @@ export default class Weather extends React.Component {
     this.state = {
       description: '',
       temp: '',
-      location: ''
+      location: '',
+      icon: ''
     }
   }
 
@@ -31,16 +33,15 @@ export default class Weather extends React.Component {
         var description = response.data.weather[0].description
         var temp = response.data.main.temp.toFixed(0)
         var location = response.data.name
-        console.log(description)
-        console.log(temp)
-        console.log(location)
+        var icon = response.data.weather[0].icon
         debugger
 
         this.setState(() => {
           return {
             description,
             temp,
-            location
+            location,
+            icon
           }
         })
       })
@@ -50,11 +51,12 @@ export default class Weather extends React.Component {
   render() {
 
     return <div className="weatherContainer">
-      <button className="weatherBtn" onClick={ this.weather }>Search Weather</button>
-      
+      {/* <button className="weatherBtn" onClick={ this.weather }>Today's Weather</button>
       <p>{this.state.location}</p>
       <p>{this.state.description}</p>
       <p>{this.state.temp}</p>
+      <img src={`http://openweathermap.org/img/w/${this.weather.icon}.png`}></img> */}
+      <Forecast />
     </div>
   }
 }

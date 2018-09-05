@@ -27,10 +27,6 @@ export default class TodoList extends React.Component {
     })
   }
 
-  // removeItem = (event) => {
-  //   // event.target.style.textDecoration = 'line-through'
-  // }
-
   toggleClass = (event) => {
     if (event.target.className === "uncompleted") {
       event.target.className = "completed"
@@ -45,8 +41,8 @@ export default class TodoList extends React.Component {
       <li className="uncompleted" onClick={this.toggleClass}> {item}
       </li>
     )
-    return <div className="todo-page-Container">
-      <ul className="todo-list-Container">
+    return <div className="todo-page-container">
+      <ul className="todo-list-container">
         {listOutput}
       </ul>
       <form onSubmit={this.handleSubmit} action="">
@@ -55,11 +51,3 @@ export default class TodoList extends React.Component {
     </div>
   }
 }
-
-
-// renderList() {
-  //   const listOutput = this.state.list.map((item) =>
-  //     <li>{item}</li>
-  //     // console.log(item + ":item")
-  //   )
-  // }

@@ -1,7 +1,8 @@
 import React from 'react'
 import '../../Pages/Clock/clock.css'
+import AnalogueClock from './AnalogueClock'
 
-export default class Clock extends React.Component {
+export default class DigiClock extends React.Component {
 
   constructor() {
     super()
@@ -26,6 +27,7 @@ export default class Clock extends React.Component {
   render() {
     return <div className="clockContainer">
       <p className="clock-p">{this.getTime()}</p>
+      <AnalogueClock />
     </div>
   }
 }
