@@ -1,0 +1,17 @@
+body {
+  background-color: aquamarine;
+  display: flex;
+  align-content: center;
+}
+
+ul {
+  width: 75%;
+
+}
+.completed {
+  text-decoration: line-through;
+}
+
+.uncompleted {
+  text-decoration: none;
+}
