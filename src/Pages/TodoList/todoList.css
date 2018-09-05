@@ -1,10 +1,10 @@
-body {
+.todo-page-container {
   background-color: aquamarine;
   display: flex;
   align-content: center;
 }
 
-ul {
+.todo-list-container {
   width: 75%;
 
 }

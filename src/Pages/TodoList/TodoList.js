@@ -45,8 +45,8 @@ export default class TodoList extends React.Component {
       <li className="uncompleted" onClick={this.toggleClass}> {item}
       </li>
     )
-    return <div className="container">
-      <ul className="listContainer">
+    return <div className="todo-page-Container">
+      <ul className="todo-list-Container">
         {listOutput}
       </ul>
       <form onSubmit={this.handleSubmit} action="">

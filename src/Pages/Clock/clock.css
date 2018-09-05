@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron");
+
+.clockContainer {
+  background-color: white;
+}
+
+.clock-p {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 5em;
+  color: black;
+  text-align: center;
+  color: rgba(0, 0, 0, 0);
+  /* text-shadow: 10px 5px 10px rgb(155, 63, 242); */
+  /* text-shadow: 10px 10px 10px rgb(155, 63, 242); */
+  animation-name: blur;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blur {
+  from { text-shadow: 10px 2px 30px rgb(155, 63, 242);
+  }
+
+  to { text-shadow: 10px 2px 5px rgb(155, 63, 242);
+  }
+
+}

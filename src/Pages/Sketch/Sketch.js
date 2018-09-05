@@ -1,4 +1,4 @@
-// import React from 'react'
+import './sketch.css'
 
 export default function Sketch (p) {
   const lineSize = 20

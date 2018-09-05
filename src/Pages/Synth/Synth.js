@@ -1,8 +1,8 @@
 import React from 'react'
 import Tone from 'tone'
-import Particles from './Particles'
-import Sketch from './Sketch'
-import Visualise from './Visualise'
+import Particles from '../Particles/Particles'
+// import Sketch from './Sketch'
+// import Visualise from './Visualise'
 
 export default class Synth extends React.Component {
   
