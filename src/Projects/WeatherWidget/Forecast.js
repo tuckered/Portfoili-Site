@@ -6,10 +6,10 @@ export default class Forecast extends React.Component {
   constructor() {
     super()
     this.state = {
-      date: '',
-      description: '',
-      temp: '',
-      location: '',
+      date: '2018-09-22',
+      description: 'scattered cloud',
+      temp: '15',
+      location: 'northoce',
       icon: "04n"
     }
   }
@@ -62,12 +62,13 @@ export default class Forecast extends React.Component {
 
     return <div className="weatherContainer">
       <button className="forecastBtn" onClick={ this.forecast }>Forecast</button>
-      
-      <p>{this.state.location}</p>
-      <p>{this.state.description}</p>
-      <p>{this.state.temp}</p>
-      <p>{date}</p>
-      <img src={`http://openweathermap.org/img/w/${this.state.icon}.png`}></img>
+      <div className="card-weather">
+        <p className="card-location">{this.state.location}</p>
+        <p className="card-description">{this.state.description}</p>
+        <p className="card-temp">{this.state.temp}</p>
+        <p className="card-date">{date}</p>
+        <img src={`http://openweathermap.org/img/w/${this.state.icon}.png`}></img>
+      </div>
     </div>
   }
 }

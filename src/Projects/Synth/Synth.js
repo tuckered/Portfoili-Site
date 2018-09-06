@@ -118,15 +118,15 @@ export default class Synth extends React.Component {
     <div className="btnContainer">
       <button className="note-button" onClick={this.basicSynth}>C2</button>
       <button className="note-button" onClick={this.basicSynth}>C#2</button>
-      <button className="note-button" onClick={this.basicSynth}>D#2</button>
-      <button className="note-button" onClick={this.basicSynth}>E2</button>
+      <button className="note-button" onClick={this.basicSynth}>C3</button>
       <button className="note-button" onClick={this.basicSynth}>F2</button>
-      <button className="note-button" onClick={this.basicSynth}>F#2</button>
-      <button className="note-button" onClick={this.basicSynth}>G2</button>
-      <button className="note-button" onClick={this.basicSynth}>G#2</button>
-      <button className="note-button" onClick={this.basicSynth}>A2</button>
-      <button className="note-button" onClick={this.basicSynth}>A#2</button>
-      <button className="note-button" onClick={this.basicSynth}>B2</button>
+      <button className="note-button" onClick={this.basicSynth}>F3</button>
+      <button className="note-button" onClick={this.basicSynth}>F#4</button>
+      <button className="note-button" onClick={this.basicSynth}>G3</button>
+      <button className="note-button" onClick={this.basicSynth}>G#4</button>
+      <button className="note-button" onClick={this.basicSynth}>Ab3</button>
+      <button className="note-button" onClick={this.basicSynth}>A#3</button>
+      <button className="note-button" onClick={this.basicSynth}>B3</button>
     </div>
     <div className="stopBtn">
       <button className="note-button" onClick={this.stopPlaying}>Stop</button>
@@ -166,7 +166,7 @@ export default class Synth extends React.Component {
                 "random": false,
                 "anim": {
                   "enable": false,
-                  "speed": 1,
+                  "speed": this.state.frequency / 2,
                   "opacity_min": 0.1,
                   "sync": false
                 }
@@ -183,7 +183,7 @@ export default class Synth extends React.Component {
               },
               "line_linked": {
                 "enable": true,
-                "distance": 100,
+                "distance": this.state.frequency / 2,
                 "color": "#ffffff",
                 "opacity": 0.4,
                 "width": 2
