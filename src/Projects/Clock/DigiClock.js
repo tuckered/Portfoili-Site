@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../Pages/Clock/clock.css'
+import './clock.css'
 import AnalogueClock from './AnalogueClock'
 
 export default class DigiClock extends React.Component {
@@ -11,7 +11,7 @@ export default class DigiClock extends React.Component {
   addZero = (i) => {
     if (i < 10) {
       i = "0" + i
-    };
+    }
     return i
   }
   

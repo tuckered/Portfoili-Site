@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../Pages/TodoList/todoList.css'
+import './todoList.css'
 
 export default class TodoList extends React.Component {
   
@@ -7,7 +7,7 @@ export default class TodoList extends React.Component {
     super()
     // this.handeClick = this.handleClick.bind(this)
     this.state = {
-      list: ["Do the washing up", "get a job", "find the meaning of life"],
+      list: ["Do the washing up", "Get a Job", "Find the Meaning of Life"],
       textInput: ''
     }
   }
@@ -42,12 +42,13 @@ export default class TodoList extends React.Component {
       </li>
     )
     return <div className="todo-page-container">
+      <h1 className="todo-h1">TO DO LIST</h1>
+      <form className="search-container" onSubmit={this.handleSubmit} action="">
+        <input onChange={this.handleChange} type="text" value={textInput}/>
+      </form>
       <ul className="todo-list-container">
         {listOutput}
       </ul>
-      <form onSubmit={this.handleSubmit} action="">
-        <input onChange={this.handleChange} type="text" value={textInput}/>
-      </form>
     </div>
   }
 }

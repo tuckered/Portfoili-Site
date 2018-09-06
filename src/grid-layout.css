@@ -1,0 +1,23 @@
+/* .grid-container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 0.25fr 1fr 1fr 1fr 0.25fr;
+  grid-template-rows: 0.25fr 1fr 1fr 1fr 0.5fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: ". . . . ." ". . . . ." ". . . . ." ". . . . .";
+}
+
+.heroimage { grid-area: 2 / 2 / 5 / 5; }
+
+.navtop { grid-area: 1 / 2 / 2 / 5; }
+
+.nav left { grid-area: 2 / 1 / 5 / 2; }
+
+.nav right { grid-area: 2 / 5 / 5 / 6; }
+
+.empyt { grid-area: 1 / 5 / 2 / 6; }
+
+.footer { grid-area: 5 / 1 / 6 / 6; }
+
+.empty right { grid-area: 1 / 1 / 2 / 2; }
+ */

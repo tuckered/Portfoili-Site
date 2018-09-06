@@ -1,0 +1,54 @@
+@import "https://fonts.googleapis.com/css?family=Indie+Flower";
+@import "https://fonts.googleapis.com/css?family=Comfortaa|Indie+Flower|Source+Sans+Pro";
+
+.todo-page-container {
+  border: 2px solid red;;
+  /* background-color: aquamarine; */
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  height: 90vh;
+  padding-top: 3em;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.todo-h1 {
+  font-size: 2em;
+}
+
+
+.todo-list-container {
+  margin: auto;
+  justify-content: center;
+  /* align-content: center; */
+  /* text-align: center; */
+  /* width: 75%; */
+  vertical-align: middle;
+  height: 100%;
+  width: 30%;
+  font-family: 'Indie Flower', cursive;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.uncompleted {
+  text-decoration: none;
+  height: auto;
+  font-size: 1.2em;
+  border: 1px solid grey;
+  margin-top: 1em;
+  border-radius: 5px;
+  /* width: 25%; */
+  transition: 0.3s;
+}
+
+.search-container {
+
+}
+
+.uncompleted:hover {
+  box-shadow: 0 0 11px rgba(240, 168, 168, 1);
+  transform: translateY(-0.25em);
+}

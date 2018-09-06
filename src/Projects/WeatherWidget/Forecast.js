@@ -10,7 +10,7 @@ export default class Forecast extends React.Component {
       description: '',
       temp: '',
       location: '',
-      icon: ''
+      icon: "04n"
     }
   }
 
@@ -48,7 +48,9 @@ export default class Forecast extends React.Component {
           return {
             description,
             temp,
-            location
+            location,
+            date,
+            icon
           }
         })
       })
@@ -56,21 +58,16 @@ export default class Forecast extends React.Component {
   }
 
   render() {
-    let icon = this.state.icon
+    let date = this.state.date.slice(0,10)
+
     return <div className="weatherContainer">
       <button className="forecastBtn" onClick={ this.forecast }>Forecast</button>
       
       <p>{this.state.location}</p>
       <p>{this.state.description}</p>
       <p>{this.state.temp}</p>
-      <p>{this.state.date}</p>
-      <img src={`openweathermap.org/img/w/${icon}.png`}></img>
+      <p>{date}</p>
+      <img src={`http://openweathermap.org/img/w/${this.state.icon}.png`}></img>
     </div>
   }
 }
-
-
-// response.data.list[7].dt_txt
-// response.data.list[7].weather[0].description
-// response.data.list[7].weather[0].icon
-// response.data.list[7].main.temp

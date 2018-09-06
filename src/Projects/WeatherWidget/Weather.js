@@ -10,7 +10,7 @@ export default class Weather extends React.Component {
       description: '',
       temp: '',
       location: '',
-      icon: ''
+      icon: "04n"
     }
   }
 
@@ -34,7 +34,6 @@ export default class Weather extends React.Component {
         var temp = response.data.main.temp.toFixed(0)
         var location = response.data.name
         var icon = response.data.weather[0].icon
-        debugger
 
         this.setState(() => {
           return {
@@ -49,13 +48,13 @@ export default class Weather extends React.Component {
   }
 
   render() {
-
     return <div className="weatherContainer">
-      {/* <button className="weatherBtn" onClick={ this.weather }>Today's Weather</button>
+      <button className="weatherBtn" onClick={ this.weather }>Today's Weather</button>
       <p>{this.state.location}</p>
       <p>{this.state.description}</p>
       <p>{this.state.temp}</p>
-      <img src={`http://openweathermap.org/img/w/${this.weather.icon}.png`}></img> */}
+      
+      <img src={`http://openweathermap.org/img/w/${this.state.icon}.png`}></img>
       <Forecast />
     </div>
   }
