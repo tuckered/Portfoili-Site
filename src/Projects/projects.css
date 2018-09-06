@@ -1,7 +1,7 @@
 .projects-nav {
   display: flex;
   /* border: 2px solid pink; */
-  height: 3em;
+  height: 2em;
   width: 100%;
   justify-content: space-evenly;
   vertical-align: middle;

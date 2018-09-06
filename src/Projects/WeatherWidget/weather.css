@@ -1,10 +1,10 @@
 .weatherContainer {
-  background-color: white;
-  border: 2px solid yellow;
+  background-color: rgba(255, 255, 255, 0.781);
+  /* border: 5px solid black; */
 }
   
 .card-weather {
-  /* border: 1px solid red;; */
+  border: 5px solid black;
   display: flex;
   text-align: center;
   flex-direction: column;

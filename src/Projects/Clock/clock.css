@@ -28,7 +28,7 @@
   position: relative;
   padding:2rem;
   animation-name: blur-box;
-  animation-duration: 10s;
+  animation-duration: 8s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -113,9 +113,9 @@
 }
 
 @keyframes blur-box {
-  from { box-shadow: 0px 0px 44px 28px rgba(255,255,255,1);
+  from { box-shadow: 30px 20px -20px rgba(255,255,255,1);
   }
 
-  to { box-shadow: 30px 20px -20px rgba(177, 174, 174, 0.555);
+  to { box-shadow: 0px 0px 44px 28px rgba(177, 174, 174, 0.555);
   }
 }

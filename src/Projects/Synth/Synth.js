@@ -21,6 +21,7 @@ export default class Synth extends React.Component {
   } 
   
   basicSynth(event) {
+
     var verb = new Tone.Reverb(
       {
         decay: 5,
@@ -41,7 +42,7 @@ export default class Synth extends React.Component {
         smoothing: 0.8,
       }
     ).toMaster()
-    var level = meter.getLevel()
+    // var level = meter.getLevel()
     // console.log("Level:" + level)
 
     // var master = new Tone.Master()
@@ -66,7 +67,7 @@ export default class Synth extends React.Component {
           octaves: 7,
           exponent: 2
         }
-      }).chain(dist, verb, Tone.Master)
+      }).chain(dist, verb)
       
     var signal = new Tone.Signal(
       {
@@ -80,7 +81,7 @@ export default class Synth extends React.Component {
       verb.generate()
       // synth.connect(verb)
       synth.connect(dist)
-      synth.connect(meter)
+      // synth.connect(meter)
       synth.connect(signal)
       // synth.connect(master)
 
@@ -107,6 +108,10 @@ export default class Synth extends React.Component {
       synth[synth.length - 1].triggerRelease(5)
       this.setState(() => {
         return { synth: synth.slice(0, synth.length-1) }
+      })
+    } else if (synth.length === 0) {
+      this.setState(() =>  {
+        return { frequency: 0 }
       })
     }
   }
