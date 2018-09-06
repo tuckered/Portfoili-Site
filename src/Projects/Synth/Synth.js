@@ -30,7 +30,7 @@ export default class Synth extends React.Component {
 
     var dist = new Tone.Distortion(
       {
-        distortion: 10,
+        distortion: 5,
         oversample: 'none',
       }
     ).toMaster()
@@ -111,28 +111,27 @@ export default class Synth extends React.Component {
     }
   }
   
-
   render() {
     return <div className="synth-container">
-    <h1 className="synth-header">Synth</h1>
-    <div className="btnContainer">
-      <button className="note-button" onClick={this.basicSynth}>C2</button>
-      <button className="note-button" onClick={this.basicSynth}>C#2</button>
-      <button className="note-button" onClick={this.basicSynth}>C3</button>
-      <button className="note-button" onClick={this.basicSynth}>F2</button>
-      <button className="note-button" onClick={this.basicSynth}>F3</button>
-      <button className="note-button" onClick={this.basicSynth}>F#4</button>
-      <button className="note-button" onClick={this.basicSynth}>G3</button>
-      <button className="note-button" onClick={this.basicSynth}>G#4</button>
-      <button className="note-button" onClick={this.basicSynth}>Ab3</button>
-      <button className="note-button" onClick={this.basicSynth}>A#3</button>
-      <button className="note-button" onClick={this.basicSynth}>B3</button>
-    </div>
-    <div className="stopBtn">
-      <button className="note-button" onClick={this.stopPlaying}>Stop</button>
+      <h1 className="synth-header">Synth</h1>
+      <div className="btnContainer">
+        <button className="note-button" onClick={this.basicSynth}>C2</button>
+        <button className="note-button" onClick={this.basicSynth}>C#2</button>
+        <button className="note-button" onClick={this.basicSynth}>C3</button>
+        <button className="note-button" onClick={this.basicSynth}>F2</button>
+        <button className="note-button" onClick={this.basicSynth}>F3</button>
+        <button className="note-button" onClick={this.basicSynth}>F#4</button>
+        <button className="note-button" onClick={this.basicSynth}>G3</button>
+        <button className="note-button" onClick={this.basicSynth}>G#4</button>
+        <button className="note-button" onClick={this.basicSynth}>Ab3</button>
+        <button className="note-button" onClick={this.basicSynth}>A#3</button>
+        <button className="note-button" onClick={this.basicSynth}>B3</button>
+      </div>
+      <div className="stopBtn">
+        <button className="note-button" onClick={this.stopPlaying}>Stop</button>
     </div>
     <div className="particles-div">
-    <Particles
+    <Particles className="particles-box"
         params={
           {
             "particles": {
@@ -207,14 +206,14 @@ export default class Synth extends React.Component {
               "detect_on": "canvas",
               "events": {
                 "onhover": {
-                  "enable": false,
+                  "enable": true,
                   "mode": "repulse"
                 },
                 "onclick": {
                   "enable": false,
                   "mode": "bubble"
                 },
-                "resize": true,
+                "resize": false,
               },
               "modes": {
                 "grab": {
@@ -231,7 +230,7 @@ export default class Synth extends React.Component {
                   "speed": 1
                 },
                 "repulse": {
-                  "distance": 400,
+                  "distance": 100,
                   "duration": 0.4
                 },
                 "push": {
@@ -246,7 +245,7 @@ export default class Synth extends React.Component {
           }
         }
         style={
-          { width: '100%', }
+          { color: 'red', }
         }
       />
     </div>

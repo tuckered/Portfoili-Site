@@ -14,21 +14,25 @@ class Home extends Component {
     return (
     <div className="home-container">
       <div className="nav-top">
-        <nav className="nav-projects"><Link to="/projects">Projects</Link></nav>
+        <nav className="nav-projects">
+          <Link to="/projects">PROJECTS</Link>
+        </nav>
       </div>
       <div className="nav-left">
-        <nav className="nav-about"><Link to="/about">About</Link>s</nav>
+        <nav className="nav-about">
+          <Link to="/about">ABOUT</Link>
+        </nav>
       </div>
       <div className="nav-right">
-        <nav className="nav-music">Music</nav>
+        <nav className="nav-music">MUSIC</nav>
       </div>
-      <main>
+      <main className="hero-image">
         <Switch>
           {/* <Route exact path="/"
             render={() => <A />} /> */}
           <Route exact path="/about"
             render={() => <About />} />
-          <Route path="/projects"
+          <Route exact path="/projects"
             render={() => <Projects />} />
         </Switch>
       </main>

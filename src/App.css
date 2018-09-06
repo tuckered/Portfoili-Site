@@ -1,4 +1,16 @@
-.grid-container {
+.main-section{
   display: flex;
-  border: 2px solid black;
+  border: 2px solid green;
+  height: 100vh;
+  background-image: url(./pictures/nathaniel-dahan-534479-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: flex-start;
+  flex-direction: column;
 }
+
+/* .white-container {
+  border: 2px solid pink;
+  height: 75vh;
+  width: 45vw;
+} */

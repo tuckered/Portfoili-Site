@@ -2,41 +2,37 @@
 @import "https://fonts.googleapis.com/css?family=Comfortaa|Indie+Flower|Source+Sans+Pro";
 
 .todo-page-container {
-  border: 2px solid red;;
+  /* border: 2px solid red; */
   /* background-color: aquamarine; */
   display: flex;
   text-align: center;
   flex-direction: column;
   height: 90vh;
   padding-top: 3em;
-  font-family: 'Source Sans Pro', sans-serif;
+  width: 30vw;
+  font-family: 'Quattrocento', serif;
+  background-color: rgba(255, 255, 255, 0.897);
 }
 
 .todo-h1 {
   font-size: 2em;
 }
 
-
 .todo-list-container {
   margin: auto;
   justify-content: center;
-  /* align-content: center; */
-  /* text-align: center; */
-  /* width: 75%; */
   vertical-align: middle;
   height: 100%;
-  width: 30%;
+  width: auto;
   font-family: 'Indie Flower', cursive;
 }
  .input-box{
   height: auto;
+  width: auto;
   font-family: 'Indie Flower', cursive;
   font-size: 1.2em;
-  /* border: 1px solid grey; */
   margin-top: 1em;
   border-radius: 5px;
-  /* width: 25%; */
-  /* transition: 0.3s; */
 }
 
 .input-box:focus {
@@ -53,10 +49,12 @@
   height: auto;
   font-size: 1.2em;
   border: 1px solid grey;
+  background-color: rgba(133, 131, 131, 0.897);
   margin-top: 1em;
   border-radius: 5px;
   /* width: 25%; */
   transition: 0.3s;
+  width: 25vw;
 }
 
 .uncompleted {
@@ -69,8 +67,13 @@
   word-wrap: break-word;
   width: auto;
   transition: 0.3s;
+  width: 25vw;
 }
 
+.completed:hover {
+  box-shadow: 0 0 11px rgba(81, 203, 238, 1);
+  transform: translateY(-0.25em);
+}
 
 .uncompleted:hover {
   box-shadow: 0 0 11px rgba(81, 203, 238, 1);

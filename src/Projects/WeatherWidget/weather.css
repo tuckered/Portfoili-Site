@@ -1,4 +1,39 @@
 .weatherContainer {
   background-color: white;
-  color: white;
+  border: 2px solid yellow;
 }
+  
+.card-weather {
+  /* border: 1px solid red;; */
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  width: 10em;
+  padding: 1em;
+}
+ 
+.card-location {
+
+}
+
+.card-description {
+  /* border: 1px solid black; */
+  margin: auto;
+}
+
+.card-temp {
+  /* border: 1px solid blue; */
+  padding-top: 0.7em;
+  margin: auto;
+}
+
+.weather-img {
+  width: 5em;
+  height: auto;
+  margin: auto;
+  /* border: 1px solid green; */
+}
+
+/* .card-date {
+
+} */

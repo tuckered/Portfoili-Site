@@ -1,14 +1,24 @@
 .home-container {
   display: flex;
   border: 2px solid red;
+  height: 3em;
+  width: 100%;
+  justify-content: space-evenly;
+  vertical-align: middle;
+  color: white;
+  padding-top: 0.8em;
+  font-family: 'Quattrocento', serif;
+  font-size: 3em;
+  position: absolute;
+  top: 0;
 }
 
-.heroimage {
-  border: 2px solid blue;
+.hero-image {
+  /* border: 2px solid blue; */
 }
 
 .nav-top {
-
+  height: 2em;
 }
 
 .nav-left {

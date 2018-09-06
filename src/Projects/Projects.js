@@ -15,7 +15,7 @@ import Weather from './WeatherWidget/Weather'
 
 class Projects extends Component {
   render() {
-    return (
+    return ( 
       <div className="Projects">
         <nav className="projects-nav" >
           <button className="project-button">
@@ -40,7 +40,7 @@ class Projects extends Component {
             <Link to="/projects/weather">Weather</Link>
           </button>
         </nav>
-        <main>
+        <main className="project-container">
           <Switch>
             <Route exact path="/projects/sketch" 
               render={ () => <P5Wrapper sketch={Sketch} /> } />

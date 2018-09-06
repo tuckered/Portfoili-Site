@@ -1,11 +1,30 @@
 .projects-nav {
-  border: 2px solid blue;
   display: flex;
+  border: 2px solid pink;
+  height: 3em;
+  width: 100%;
   justify-content: space-evenly;
+  vertical-align: middle;
+  /* color: white; */
+  padding-top: 0.8em;
+  font-family: 'Quattrocento', serif;
+  font-size: 3em;
+  /* position: absolute;
+  top: 0; */
 }
 
 .project-button {
   border: 3px solid black;
-  height: 3em;
+  height: 2em;
+  color: white;
+  background-color: transparent;
+  font-size: 0.6em;
+  padding: 1px;
+  font-family: 'Quattrocento', serif;
+}
 
+.project-container {
+  display: flex;
+  border: 5px solid black;
+  justify-content: center;
 }

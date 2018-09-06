@@ -1,12 +1,17 @@
 .synth-container{
-  border: 2px solid red;;
+  /* border: 2px solid red;; */
   /* background-color: aquamarine; */
   display: flex;
   text-align: center;
-  flex-direction: column;
-  height: 90vh;
+	flex-direction: column;
+	justify-content: flex-start;
+  height: 100%;
   padding-top: 1em;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.particles-div {
+	height: 30vh;
 }
 
 .note-button {
@@ -35,4 +40,8 @@
 .noteButton:active {
 	position:relative;
 	top:1px;
+}
+
+.particles-box{
+	background-color: aquamarine;
 }

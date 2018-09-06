@@ -6,28 +6,14 @@ import Tone from 'tone'
 import Home from './Home'
 import About from './About'
 import Projects from './Projects/Projects'
+import './App.css'
 // import './grid-layout.css'
 
 class App extends Component {
   render() {
     return (
     <div className="grid-container">
-
-      {/* <div className="navtop">
-        <nav><Link to="/projects">Projects</Link></nav>
-      </div>
-      <div className="nav left">
-        <nav><Link to="/about">About</Link></nav>
-      </div>
-      <div className="nav right">
-        <nav>Music</nav>
-      </div> */}
-      <div>
-        <nav>
-          <Link to="/">Home</Link>
-        </nav>
-      </div>
-      <main>
+      <main className="main-section">
         <Switch>
           <Route exact path="/"
             render={() => <Home />} />
@@ -36,7 +22,10 @@ class App extends Component {
           <Route path="/projects"
             render={() => <Projects />} />
         </Switch>
+        <div className="white-container">
+        </div>
       </main>
+      <p className="">Thomas Alan Waters</p>
     </div>
     )
   }
