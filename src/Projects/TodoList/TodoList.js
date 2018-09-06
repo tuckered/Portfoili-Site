@@ -44,7 +44,7 @@ export default class TodoList extends React.Component {
     return <div className="todo-page-container">
       <h1 className="todo-h1">TO DO LIST</h1>
       <form className="search-container" onSubmit={this.handleSubmit} action="">
-        <input onChange={this.handleChange} type="text" value={textInput}/>
+        <input className="input-box" onChange={this.handleChange} type="text" value={textInput}/>
       </form>
       <ul className="todo-list-container">
         {listOutput}

@@ -28,13 +28,28 @@
   width: 30%;
   font-family: 'Indie Flower', cursive;
 }
+ .input-box{
+  height: auto;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.2em;
+  /* border: 1px solid grey; */
+  margin-top: 1em;
+  border-radius: 5px;
+  /* width: 25%; */
+  /* transition: 0.3s; */
+}
+
+.input-box:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  /* padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px; */
+  border: 1px solid rgba(81, 203, 238, 1);
+  transition: 0.3s;
+}
 
 .completed {
   text-decoration: line-through;
-}
-
-.uncompleted {
-  text-decoration: none;
+  text-decoration-color: rgb(39, 170, 206);
   height: auto;
   font-size: 1.2em;
   border: 1px solid grey;
@@ -44,11 +59,20 @@
   transition: 0.3s;
 }
 
-.search-container {
-
+.uncompleted {
+  text-decoration: none;
+  height: auto;
+  font-size: 1.2em;
+  border: 1px solid grey;
+  margin-top: 1em;
+  border-radius: 5px;
+  word-wrap: break-word;
+  width: auto;
+  transition: 0.3s;
 }
 
+
 .uncompleted:hover {
-  box-shadow: 0 0 11px rgba(240, 168, 168, 1);
+  box-shadow: 0 0 11px rgba(81, 203, 238, 1);
   transform: translateY(-0.25em);
 }

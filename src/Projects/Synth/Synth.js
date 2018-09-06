@@ -1,6 +1,9 @@
 import React from 'react'
 import Tone from 'tone'
-import Particles from '../Particles/Particles'
+// import Particles from '../Particles/Particles'
+import './synth.css'
+import Particles from 'react-particles-js';
+
 // import Sketch from './Sketch'
 // import Visualise from './Visualise'
 
@@ -12,8 +15,8 @@ export default class Synth extends React.Component {
     this.stopPlaying = this.stopPlaying.bind(this)
     this.reverb= this.reverb.bind(this)
     this.state = {
-      synth: []
-      
+      synth: [],
+      frequency: ''
     }
   } 
   
@@ -32,13 +35,6 @@ export default class Synth extends React.Component {
       }
     ).toMaster()
 
-    // var analyser = new Tone.Analyser(
-    //   {
-    //     size: 1024,
-    //     type: 'string',
-    //     smoothing: 0.8
-    //   }
-    // ).toMaster()
 
     var meter = new Tone.Meter( 
       {
@@ -47,6 +43,8 @@ export default class Synth extends React.Component {
     ).toMaster()
     var level = meter.getLevel()
     // console.log("Level:" + level)
+
+    // var master = new Tone.Master()
 
     var synth = new Tone.MonoSynth(
       {
@@ -70,20 +68,32 @@ export default class Synth extends React.Component {
         }
       }).chain(dist, verb, meter, Tone.Master)
       
-      
-      // verb.dispose()
+    var signal = new Tone.Signal(
+      {
+        value  : 0 ,
+        units  : Tone.Type.Default ,
+        convert  : true
+      })
+    
+
+      verb.dispose()
       verb.generate()
-      synth.connect(verb)
+      // synth.connect(verb)
       synth.connect(dist)
       synth.connect(meter)
-      console.log("Level:" + level)
+      synth.connect(signal)
+      // synth.connect(master)
+
+      console.log(signal)
 
 
-    synth.triggerAttack(event.target.textContent)  
+
+    synth.triggerAttack(event.target.textContent)
+    console.log(synth.frequency.value)
     console.log((this.state.synth.length + 1) + 'start')
     this.setState((prevState) => {
       // debugger
-      return { synth: [...prevState.synth, synth] }
+      return { synth: [...prevState.synth, synth], frequency: synth.frequency.value }
     })
   }
 
@@ -103,32 +113,31 @@ export default class Synth extends React.Component {
   
 
   render() {
-    return <div>
-    <h1>Synth</h1>
+    return <div className="synth-container">
+    <h1 className="synth-header">Synth</h1>
     <div className="btnContainer">
-      <button onClick={this.basicSynth}>C2</button>
-      <button onClick={this.basicSynth}>C#2</button>
-      <button onClick={this.basicSynth}>D2</button>
-      <button onClick={this.basicSynth}>D#2</button>
-      <button onClick={this.basicSynth}>E2</button>
-      <button onClick={this.basicSynth}>F2</button>
-      <button onClick={this.basicSynth}>F#2</button>
-      <button onClick={this.basicSynth}>G2</button>
-      <button onClick={this.basicSynth}>G#2</button>
-      <button onClick={this.basicSynth}>A2</button>
-      <button onClick={this.basicSynth}>A#2</button>
-      <button onClick={this.basicSynth}>B2</button>
+      <button className="note-button" onClick={this.basicSynth}>C2</button>
+      <button className="note-button" onClick={this.basicSynth}>C#2</button>
+      <button className="note-button" onClick={this.basicSynth}>D#2</button>
+      <button className="note-button" onClick={this.basicSynth}>E2</button>
+      <button className="note-button" onClick={this.basicSynth}>F2</button>
+      <button className="note-button" onClick={this.basicSynth}>F#2</button>
+      <button className="note-button" onClick={this.basicSynth}>G2</button>
+      <button className="note-button" onClick={this.basicSynth}>G#2</button>
+      <button className="note-button" onClick={this.basicSynth}>A2</button>
+      <button className="note-button" onClick={this.basicSynth}>A#2</button>
+      <button className="note-button" onClick={this.basicSynth}>B2</button>
     </div>
     <div className="stopBtn">
-      <button onClick={this.stopPlaying}>Stop</button>
+      <button className="note-button" onClick={this.stopPlaying}>Stop</button>
     </div>
-    <div>
+    <div className="particles-div">
     <Particles
         params={
           {
             "particles": {
               "number": {
-                "value": 30,
+                "value": this.state.frequency,
                 "density": {
                   "enable": false,
                   "value_area": 0
@@ -167,7 +176,7 @@ export default class Synth extends React.Component {
                 "random": true,
                 "anim": {
                   "enable": false,
-                  "speed": 80,
+                  "speed": 150,
                   "size_min": 0.1,
                   "sync": true
                 }
@@ -250,31 +259,3 @@ export default class Synth extends React.Component {
 
 
 
-
-// basicSynth(event) {
-//   let keyBoard = {
-//     97: "C3",
-//     115: "D4",
-//     100: "E4",
-//     102: "F4",
-//     103: "G4"
-//   }
-//   var synth = new Tone.MonoSynth(
-//     {
-//       "oscillator" : {
-//         "type" : "sine"
-//      },
-//      "envelope" : {
-//        "attack" : 0.5
-//      }
-//     }).toMaster()
-    
-//   if (event.type === 'click') {
-//     return synth.triggerAttack(event.target.textContent)
-//   } else if (event.type === 'keypress') {
-//     return synth.triggerAttack(keyBoard[event.charCode])
-//   }
-
-//   synth.triggerRelease()
-
-// }

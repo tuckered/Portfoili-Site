@@ -1,0 +1,38 @@
+.synth-container{
+  border: 2px solid red;;
+  /* background-color: aquamarine; */
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  height: 90vh;
+  padding-top: 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.note-button {
+  -moz-box-shadow:inset 0px -3px 7px 0px #fafafa;
+	-webkit-box-shadow:inset 0px -3px 7px 0px #fafafa;
+	box-shadow:inset 0px -3px 7px 0px #fafafa;
+	background-color:transparent;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:15px;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+
+.noteButton:hover {
+	background-color:transparent;
+}
+
+.noteButton:active {
+	position:relative;
+	top:1px;
+}
