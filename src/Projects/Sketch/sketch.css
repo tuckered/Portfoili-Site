@@ -1,4 +1,6 @@
 canvas {
-  background-color: rgb(75, 74, 74);
+  background-color: black;
+  color: white;
+  -webkit-text-stroke-color: azure;
 }
 

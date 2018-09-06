@@ -30,7 +30,7 @@ export default class Synth extends React.Component {
 
     var dist = new Tone.Distortion(
       {
-        distortion: 5,
+        distortion: 0.5,
         oversample: 'none',
       }
     ).toMaster()
@@ -66,7 +66,7 @@ export default class Synth extends React.Component {
           octaves: 7,
           exponent: 2
         }
-      }).chain(dist, verb, meter, Tone.Master)
+      }).chain(dist, verb, Tone.Master)
       
     var signal = new Tone.Signal(
       {

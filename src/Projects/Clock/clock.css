@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Orbitron");
 
 .clockContainer {
-  background-color: white;
+  background-color: none;
 }
 
 .clock-p {
@@ -22,18 +22,13 @@
 .clock-container {
   width: 20rem;
   height: 20rem;
-  border:20px solid rgba(155, 63, 242, 0.5);
+  border:20px solid rgba(255, 255, 255, 0);
   border-radius:50%;
   margin:50px auto;
   position: relative;
   padding:2rem;
-  /* box-shadow:
-  0 0 0 4px rgba(0,0,0,0.1),
-  inset 0 0 0 3px #EFEFEF,
-  inset 0 0 10px black,
-  0 0 10px rgba(0,0,0,0.2); */
   animation-name: blur-box;
-  animation-duration: 2.5s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -43,10 +38,6 @@
   width: 100%;
   height: 100%;
   transform: translateY(-3px); 
-  /* animation-name: blur-box;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate; */
 }
 
 /* .hand {
@@ -68,14 +59,14 @@
 .hourhand {
   width: 50%;
   height: 4px;
-  background: rgb(155, 63, 242);
+  background: white;
   position: absolute;
   top: 50%;
   transform-origin: 100%;
   transform: rotate(90deg);
-  transition: all 0.05s;
-  transition-timing-function: cubic-bezier(0, 2.32, 0.2, 1.35);
-  animation-name: blur-box;
+  transition: all 1s;
+  transition-timing-function: cubic-beziercubic-bezier(0.52, 0.52, 1, 1);
+  /* animation-name: blur-box; */
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -84,14 +75,14 @@
 .minhand {
   width: 50%;
   height: 4px;
-  background: rgb(155, 63, 242);
+  background: white;
   position: absolute;
   top: 50%;
   transform-origin: 100%;
   transform: rotate(90deg);
   transition: all 0.05s;
   transition-timing-function: cubic-bezier(0, 2.32, 0.2, 1.35);
-  animation-name: blur-box;
+  /* animation-name: blur-box; */
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -107,24 +98,24 @@
   transform: rotate(90deg);
   transition: all 0.05s;
   transition-timing-function: cubic-bezier(0, 2.32, 0.2, 1.35);
-  animation-name: blur-box;
-  animation-duration: 2.5s;
+  /* animation-name: blur-box; */
+  animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
 
 @keyframes blur-text {
-  from { text-shadow: 10px 2px 30px rgb(155, 63, 242);
+  from { text-shadow: 10px 2px 30px white;
   }
 
-  to { text-shadow: 10px 2px 5px rgb(155, 63, 242);
+  to { text-shadow: 10px 2px 5px white;
   }
 }
 
 @keyframes blur-box {
-  from { box-shadow: 10px 2px 30px rgb(195, 103, 255);
+  from { box-shadow: 0px 0px 44px 28px rgba(255,255,255,1);
   }
 
-  to { box-shadow: 10px 2px 5px rgb(155, 63, 242);
+  to { box-shadow: 30px 20px -20px rgba(177, 174, 174, 0.555);
   }
 }

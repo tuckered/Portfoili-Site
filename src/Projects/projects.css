@@ -1,6 +1,6 @@
 .projects-nav {
   display: flex;
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
   height: 3em;
   width: 100%;
   justify-content: space-evenly;
@@ -14,7 +14,7 @@
 }
 
 .project-button {
-  border: 3px solid black;
+  /* border: 3px solid black; */
   height: 2em;
   color: white;
   background-color: transparent;
@@ -25,6 +25,6 @@
 
 .project-container {
   display: flex;
-  border: 5px solid black;
+  /* border: 5px solid black; */
   justify-content: center;
 }

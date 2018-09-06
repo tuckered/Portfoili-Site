@@ -6,6 +6,7 @@ import Tone from 'tone'
 import Home from './Home'
 import About from './About'
 import Projects from './Projects/Projects'
+import Music from './Music'
 import './App.css'
 // import './grid-layout.css'
 
@@ -19,6 +20,8 @@ class App extends Component {
             render={() => <Home />} />
           <Route exact path="/about"
             render={() => <About />} />
+          <Route exact path="/music"
+            render={() => <Music />} />
           <Route path="/projects"
             render={() => <Projects />} />
         </Switch>

@@ -7,6 +7,7 @@ import Tone from 'tone'
 import App from './App'
 import About from './About'
 import Projects from './Projects/Projects'
+import Music from './Music'
 import './home.css'
 
 class Home extends Component {
@@ -24,12 +25,14 @@ class Home extends Component {
         </nav>
       </div>
       <div className="nav-right">
-        <nav className="nav-music">MUSIC</nav>
+        <nav className="nav-music">
+        <Link to="/music">MUSIC</Link>
+        </nav>
       </div>
       <main className="hero-image">
         <Switch>
-          {/* <Route exact path="/"
-            render={() => <A />} /> */}
+          <Route exact path="/music"
+            render={() => <Music />} />
           <Route exact path="/about"
             render={() => <About />} />
           <Route exact path="/projects"

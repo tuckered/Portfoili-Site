@@ -4,14 +4,19 @@
   display: flex;
   text-align: center;
 	flex-direction: column;
-	justify-content: flex-start;
+	margin: auto;
   height: 100%;
-  padding-top: 1em;
-  font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Quattrocento', serif;
 }
 
 .particles-div {
-	height: 30vh;
+	align-content: center;
+	width: 80%;
+	margin: auto;
+	/* margin-left: 20%;
+	margin-right: 20%; */
+	border: 5px solid white;
+	/* padding-left: 20%; */
 }
 
 .note-button {
@@ -22,11 +27,11 @@
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	border-radius:3px;
-	border:1px solid #000000;
+	/* border:1px solid #000000; */
 	display:inline-block;
 	cursor:pointer;
-	color:#000000;
-	font-family:Arial;
+	color:white;
+	font-family: 'Quattrocento', serif;
 	font-size:15px;
 	padding:9px 23px;
 	text-decoration:none;
@@ -42,6 +47,6 @@
 	top:1px;
 }
 
-.particles-box{
+/* .particles-box{
 	background-color: aquamarine;
-}
+} */
