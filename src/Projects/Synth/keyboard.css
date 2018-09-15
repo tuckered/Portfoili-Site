@@ -1,0 +1,12 @@
+.keyboard-container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.note-div {
+  border: solid 1px black;
+  width: 30px;
+  height: 80px;
+  text-align: center;
+}

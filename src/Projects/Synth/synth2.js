@@ -1,5 +1,6 @@
 import React from 'react'
 import Tone from 'tone'
+import Keyboard from './Keyboard'
 
 export default class Synth2 extends React.Component {
 
@@ -14,7 +15,6 @@ export default class Synth2 extends React.Component {
   }
 
   newSynth = () => {
-    console.log('hi')
     const synth = new Tone.MonoSynth({
       "frequency": 'C4',
       "detune": 0,
@@ -99,18 +99,10 @@ export default class Synth2 extends React.Component {
   handleReleaseSliderChange = (event) => {
     this.setState({ releaseValue: event.target.value })
   }
-  // handleSliderChange = (event) => {
-  //   if (event.target.id === "attack-slider") {
-  //     this.setState({ attackValue: event.target.value })
-  //   } else if (event.target.id === "decay-slider") {
-  //     this.setState({ decayValue: event.target.value })
-  //   }
-  // }
 
   render() {
-    console.log(this.state.attackValue)
-    console.log(this.state.decayValue)
     return <div className="synth-container">
+      <Keyboard />
       <button onClick={this.newSynth}>play me</button>
       <this.adsrValues />
     </div>
