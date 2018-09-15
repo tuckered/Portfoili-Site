@@ -11,24 +11,28 @@ export default class Synth2 extends React.Component {
       decayValue: 50,
       sustainValue: 50,
       releaseValue: 50,
+      frequency: 100,
+      isPlaying: true,
+      synth: {},
+      waveType: "sine"
     }
   }
 
   newSynth = () => {
-    const synth = new Tone.MonoSynth({
+    var synth = new Tone.MonoSynth({
       "frequency": 'C4',
       "detune": 0,
 			"oscillator" : {
-				"type" : "square8"
+        "type" : this.state.waveType
 			},
 			"envelope" : {
-				"attack" : this.state.attackValue / 50,
+        "attack" : this.state.attackValue / 50,
 				"decay" : this.state.decayValue / 50,
 				"sustain" : this.state.sustainValue / 50,
 				"release" : this.state.releaseValue / 50,
 			},
 			"filterEnvelope" : {
-				"attack" : 0.001,
+        "attack" : 0.001,
 				"decay" : 0.7,
 				"sustain" : 0.1,
 				"release" : 0.8,
@@ -36,8 +40,75 @@ export default class Synth2 extends React.Component {
 				"octaves" : 4
 			}
     }).toMaster()
-    synth.triggerAttackRelease('C4', '2n')
+    let pitch = new Tone.Frequency(this.state.frequency)
+    pitch.toNote()
+
+    this.setState({ synth: synth })
+
+
+    synth.triggerAttack(pitch)
+    // console.log("1:" + this.state.isPlaying)
+    
+    // if (this.state.isPlaying === true) {
+    //   synth.triggerAttack(pitch)
+    //   console.log('true' + this.setState.isPlaying)
+    //   this.setState({ isPlaying: false })
+    // }
+    // else if (this.state.isPlaying === false) {
+    //   console.log('false' + this.state.isPlaying)
+    //   synth.triggerRelease(0.5)
+    //   this.setState({ isPlaying: false })
+    // }
+
+    // this.setState({ synth: synth})
   }
+
+  stopSynth = () => {
+    // debugger
+    this.state.synth.triggerRelease()
+    
+  }
+
+  frequencyValue = () => {
+    return <div className="freq-container">
+    <p>Pitch</p>
+      <input 
+        id="freq-slider" 
+        type="range" 
+        min="50" max="200" 
+        value={this.state.frequency} 
+        onChange={this.handleFreqSliderChange}
+        step="1"/>
+    </div>
+  }
+  
+  handleFreqSliderChange = (event) => {
+    this.setState({ frequency: event.target.value })
+  }
+
+  waveType = () => {
+    return <div className="wave-container">
+    <p>Wave-Type</p>
+      <form onSubmit={this.handleSubmit}>
+        <select value={this.state.value} onChange={this.handleWaveChange}>
+          <option value="sine">Sine</option>
+          <option value="square">Square</option>
+          <option value="triangle">Triangle</option>
+          <option value="sawtooth">SawTooth</option>
+        </select>
+      </form>
+    </div>
+  }
+
+  handleWaveChange = (event) => {
+    console.log(event.target.value)
+    this.setState({ waveType: event.target.value})
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+  }
+
 
   adsrValues = () => {
    return <div className="adsr-container">
@@ -100,10 +171,15 @@ export default class Synth2 extends React.Component {
     this.setState({ releaseValue: event.target.value })
   }
 
+
+
   render() {
     return <div className="synth-container">
-      <Keyboard />
-      <button onClick={this.newSynth}>play me</button>
+      {/* <Keyboard /> */}
+      <button onClick={this.newSynth}>Play</button>
+      <button onClick={this.stopSynth}>Stop</button>
+      <this.waveType />
+      <this.frequencyValue />
       <this.adsrValues />
     </div>
   }

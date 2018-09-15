@@ -22,7 +22,7 @@ export default class Keyboard extends React.Component {
     }
     return <div>
       {Object.keys(keyboard).map(function(note) {
-      console.log(keyboard[note])
+      // console.log(keyboard[note])
     })}
     <div className="note">{keyboard[this.note]}</div>
     </div>
@@ -81,91 +81,91 @@ export default class Keyboard extends React.Component {
 // }
 
 
-  // let instrument = Instruments.keyboard;
+//   let instrument = Instruments.keyboard;
 
-  // const keyToNote = key => {
-  //   const note = instrument[ key ];
-  //   if ( !note ) {
-  //     return;
-  //   }
+//   const keyToNote = key => {
+//     const note = instrument[ key ];
+//     if ( !note ) {
+//       return;
+//     }
 
-  //   return Tone.Frequency(
-  //     note
-  //       .replace( 'l', octave )
-  //       .replace( 'u', octave + 1 )
-  //   ).toNote();
-  // };
+//     return Tone.Frequency(
+//       note
+//         .replace( 'l', octave )
+//         .replace( 'u', octave + 1 )
+//     ).toNote();
+//   };
 
-  // const onKeyDown = (() => {
-  //   let listener;
+//   const onKeyDown = (() => {
+//     let listener;
 
-  //   return synth => {
-  //     document.removeEventListener( 'keydown', listener );
+//     return synth => {
+//       document.removeEventListener( 'keydown', listener );
 
-  //     listener = event => {
-  //       const { key } = event;
+//       listener = event => {
+//         const { key } = event;
 
-  //       // Only trigger once per keydown event.
-  //       if ( !keys[ key ] ) {
-  //         keys[ key ] = true;
+//         // Only trigger once per keydown event.
+//         if ( !keys[ key ] ) {
+//           keys[ key ] = true;
 
-  //         const note = keyToNote( key );
-  //         if ( note ) {
-  //           synth.triggerAttack( note );
-  //           prevKey = key;
-  //         }
-  //       }
-  //     };
+//           const note = keyToNote( key );
+//           if ( note ) {
+//             synth.triggerAttack( note );
+//             prevKey = key;
+//           }
+//         }
+//       };
 
-  //     document.addEventListener( 'keydown', listener );
-  //   };
-  // })();
+//       document.addEventListener( 'keydown', listener );
+//     };
+//   })();
 
-  // const onKeyUp = (() => {
-  //   let listener;
-  //   let prev;
+//   const onKeyUp = (() => {
+//     let listener;
+//     let prev;
 
-  //   return synth => {
-  //     // Clean-up.
-  //     if ( prev ) {
-  //       prev.triggerRelease();
-  //     }
+//     return synth => {
+//       // Clean-up.
+//       if ( prev ) {
+//         prev.triggerRelease();
+//       }
 
-  //     document.removeEventListener( 'keyup', listener );
+//       document.removeEventListener( 'keyup', listener );
 
-  //     prev = synth;
-  //     listener = event => {
-  //       const { key } = event;
-  //       if ( keys[ key ] ) {
-  //         keys[ key ] = false;
+//       prev = synth;
+//       listener = event => {
+//         const { key } = event;
+//         if ( keys[ key ] ) {
+//           keys[ key ] = false;
 
-  //         const note = keyToNote( key );
-  //         if ( synth instanceof Tone.PolySynth ) {
-  //           synth.triggerRelease( note );
-  //         } else if ( note && key === prevKey ) {
-  //           // Trigger release if this is the previous note played.
-  //           synth.triggerRelease();
-  //         }
-  //       }
-  //     };
+//           const note = keyToNote( key );
+//           if ( synth instanceof Tone.PolySynth ) {
+//             synth.triggerRelease( note );
+//           } else if ( note && key === prevKey ) {
+//             // Trigger release if this is the previous note played.
+//             synth.triggerRelease();
+//           }
+//         }
+//       };
 
-  //     document.addEventListener( 'keyup', listener );
-  //   };
-  // })();
+//       document.addEventListener( 'keyup', listener );
+//     };
+//   })();
 
-  // // Octave controls.
-  // document.addEventListener( 'keydown', event => {
-  //   // Decrease octave range (min: 0).
-  //   if ( event.key === 'z' ) { octave = Math.max( octave - 1, 0 ); }
-  //   // Increase octave range (max: 10).
-  //   if ( event.key === 'x' ) { octave = Math.min( octave + 1, 9 ); }
-  // });
+//   // Octave controls.
+//   document.addEventListener( 'keydown', event => {
+//     // Decrease octave range (min: 0).
+//     if ( event.key === 'z' ) { octave = Math.max( octave - 1, 0 ); }
+//     // Increase octave range (max: 10).
+//     if ( event.key === 'x' ) { octave = Math.min( octave + 1, 9 ); }
+//   });
 
-  // // Init.
-  // (() => {
-  //   const synth = new Tone.PolySynth( 10 );
-  //   synth.toMaster();
+//   // Init.
+//   (() => {
+//     const synth = new Tone.PolySynth( 10 );
+//     synth.toMaster();
 
-  //   onKeyDown( synth );
-  //   onKeyUp( synth );
-  // })()
+//     onKeyDown( synth );
+//     onKeyUp( synth );
+//   })()
