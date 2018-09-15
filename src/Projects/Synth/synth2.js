@@ -7,29 +7,32 @@ export default class Synth2 extends React.Component {
   constructor() {
     super()
     this.state = {
-      attackValue: 50,
-      decayValue: 50,
-      sustainValue: 50,
-      releaseValue: 50,
+      attackValue: 0.5,
+      decayValue: 0.5,
+      sustainValue: 0.5,
+      releaseValue: 0.5,
       frequency: 100,
       isPlaying: true,
       synth: {},
-      waveType: "sine"
+      waveType: "sine",
+      tone: '',
+      pattern: [],
+      patternType: "up"
     }
   }
 
   newSynth = () => {
     var synth = new Tone.MonoSynth({
-      "frequency": 'C4',
+      // "frequency": 'C4',
       "detune": 0,
 			"oscillator" : {
         "type" : this.state.waveType
 			},
 			"envelope" : {
-        "attack" : this.state.attackValue / 50,
-				"decay" : this.state.decayValue / 50,
-				"sustain" : this.state.sustainValue / 50,
-				"release" : this.state.releaseValue / 50,
+        "attack" : this.state.attackValue,
+				"decay" : this.state.decayValue,
+				"sustain" : this.state.sustainValue,
+				"release" : this.state.releaseValue,
 			},
 			"filterEnvelope" : {
         "attack" : 0.001,
@@ -40,33 +43,50 @@ export default class Synth2 extends React.Component {
 				"octaves" : 4
 			}
     }).toMaster()
-    let pitch = new Tone.Frequency(this.state.frequency)
-    pitch.toNote()
 
-    this.setState({ synth: synth })
-
-
-    synth.triggerAttack(pitch)
-    // console.log("1:" + this.state.isPlaying)
+    const now = Tone.now()
+    var pattern = new Tone.Pattern(function(time, note){
+      synth.triggerAttack(note);
+    }, this.state.pattern, this.state.patternType)
+    pattern.start(0.2)
+    // Tone.context.latencyHint = 'playback'
+    Tone.Transport.start("+0.2")
+    this.setState({ synth: synth, tone: Tone })
     
-    // if (this.state.isPlaying === true) {
-    //   synth.triggerAttack(pitch)
-    //   console.log('true' + this.setState.isPlaying)
-    //   this.setState({ isPlaying: false })
-    // }
-    // else if (this.state.isPlaying === false) {
-    //   console.log('false' + this.state.isPlaying)
-    //   synth.triggerRelease(0.5)
-    //   this.setState({ isPlaying: false })
-    // }
-
-    // this.setState({ synth: synth})
   }
 
   stopSynth = () => {
-    // debugger
-    this.state.synth.triggerRelease()
-    
+    this.state.tone.Transport.stop()
+    this.state.synth.triggerRelease(0.2)
+    this.setState({ pattern: [] })
+  }
+
+  makeKeyboard  = (event) => {
+    return <div className="keyboard-container">
+      <div className="note-div" onClick={this.handleChange}>C3</div>
+      <div className="note-div" onClick={this.handleChange}>D3</div>
+      <div className="note-div" onClick={this.handleChange}>E3</div>
+      <div className="note-div" onClick={this.handleChange}>F3</div>
+      <div className="note-div" onClick={this.handleChange}>G3</div>
+      <div className="note-div" onClick={this.handleChange}>A3</div>
+      <div className="note-div" onClick={this.handleChange}>B3</div>
+      <div className="note-div" onClick={this.handleChange}>C4</div>
+      <div className="note-div" onClick={this.handleChange}>D4</div>
+      <div className="note-div" onClick={this.handleChange}>E4</div>
+      <div className="note-div" onClick={this.handleChange}>F4</div>
+      <div className="note-div" onClick={this.handleChange}>G4</div>
+      <div className="note-div" onClick={this.handleChange}>A4</div>
+      <div className="note-div" onClick={this.handleChange}>B4</div>
+      <div className="note-div" onClick={this.handleChange}>C5</div>
+    </div>
+  }
+
+  handleChange = (event) => {
+    event.persist()
+    console.log(event.target.textContent)
+    this.setState((prevState) => {
+      return { pattern: [...prevState.pattern, event.target.textContent] }    
+    })
   }
 
   frequencyValue = () => {
@@ -86,6 +106,27 @@ export default class Synth2 extends React.Component {
     this.setState({ frequency: event.target.value })
   }
 
+  patternType = () => {
+    return <div className="pattern-container">
+    <p>pattern-Type</p>
+      <form onSubmit={this.handleSubmit}>
+        <select value={this.state.value} onChange={this.handlepatternChange}>
+          <option value="up">Up</option>
+          <option value="down">Down</option>
+          <option value="upDown">Up-Down</option>
+          <option value="downUp">Down-Up</option>
+          <option value="random">Random</option>
+        </select>
+      </form>
+    </div>
+  }
+
+  handlePatternChange = (event) => {
+    console.log(event.target.value)
+    this.setState({ patternType: event.target.value})
+  }
+
+  
   waveType = () => {
     return <div className="wave-container">
     <p>Wave-Type</p>
@@ -99,7 +140,7 @@ export default class Synth2 extends React.Component {
       </form>
     </div>
   }
-
+  
   handleWaveChange = (event) => {
     console.log(event.target.value)
     this.setState({ waveType: event.target.value})
@@ -109,7 +150,6 @@ export default class Synth2 extends React.Component {
     event.preventDefault()
   }
 
-
   adsrValues = () => {
    return <div className="adsr-container">
       <p>Attack</p>
@@ -117,40 +157,40 @@ export default class Synth2 extends React.Component {
         <input 
         id="attack-slider" 
         type="range" 
-        min="0" max="100" 
+        min="0" max="1" 
         value={this.state.attackValue} 
         onChange={this.handleAttackSliderChange}
-        step="1"/>
+        step="0.01"/>
       </div>
       <p>Decay</p>
       <div className="slider-container">
         <input 
         id="decay-slider" 
         type="range" 
-        min="0" max="100" 
+        min="0" max="1" 
         value={this.state.decayValue} 
         onChange={this.handleDecaySliderChange}
-        step="1"/>
+        step="0.01"/>
       </div>
       <p>Sustain</p>
       <div className="slider-container">
         <input 
         id="sustain-slider" 
         type="range" 
-        min="0" max="100" 
+        min="0" max="1" 
         value={this.state.sustainValue} 
         onChange={this.handleSustainSliderChange}
-        step="1"/>
+        step="0.01"/>
       </div>
       <p>Release</p>
       <div className="slider-container">
         <input 
         id="release-slider" 
         type="range" 
-        min="0" max="100" 
+        min="0" max="1" 
         value={this.state.releaseValue} 
         onChange={this.handleReleaseSliderChange}
-        step="1"/>
+        step="0.01"/>
       </div>
     </div>
   }
@@ -168,6 +208,7 @@ export default class Synth2 extends React.Component {
   }
 
   handleReleaseSliderChange = (event) => {
+    console.log(event.target.value)
     this.setState({ releaseValue: event.target.value })
   }
 
@@ -175,7 +216,9 @@ export default class Synth2 extends React.Component {
 
   render() {
     return <div className="synth-container">
-      {/* <Keyboard /> */}
+      <p className="pattern-display">{this.state.pattern}</p>
+      <this.patternType />
+      <this.makeKeyboard />
       <button onClick={this.newSynth}>Play</button>
       <button onClick={this.stopSynth}>Stop</button>
       <this.waveType />
