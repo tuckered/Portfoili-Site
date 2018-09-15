@@ -12,6 +12,7 @@ import Visualise from './Visualise/Visualise'
 import TodoList from './TodoList/TodoList'
 import DigiClock from './Clock/DigiClock'
 import Weather from './WeatherWidget/Weather'
+import Synth2 from './Synth/synth2'
 
 class Projects extends Component {
   render() {
@@ -23,6 +24,9 @@ class Projects extends Component {
           </div>
           <div className="project-button">
             <Link to="/projects/synth">Synth</Link>
+          </div>
+          <div className="project-button">
+            <Link to="/projects/synth2">Synth2</Link>
           </div>
           <div className="project-button">
             <Link to="/projects/particles">Particles</Link>
@@ -46,6 +50,8 @@ class Projects extends Component {
               render={ () => <P5Wrapper sketch={Sketch} /> } />
             <Route exact path="/projects/synth"
               render={ () => <Synth /> } />
+            <Route exact path="/projects/synth2"
+              render={ () => <Synth2 /> } />
             <Route exact path="/projects/particles"
               render={ () => <Particles /> } />
             <Route exact path="/projects/sketch" 
