@@ -2,19 +2,24 @@ import './sketch.css'
 import React from 'react'
 
 export default function Sketch (p) {
-  // const lineSize = Math.random() * 25
   const lineSize = 25
+  // const lineSize = Math.random() * 25
 
   p.setup = function (){
-    p.createCanvas(500, 500)
+    p.createCanvas(700, 500)
   }
   
   p.draw = function () {
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+    
     p.clear()
     p.strokeWeight(4)
-    p.stroke('white')
+    p.background(`rgb(${getRandomInt(255)}, ${getRandomInt(255)}, ${getRandomInt(255)})`)
+    console.log(getRandomInt(255))
     for (let y = 0; y < 500; y+= lineSize) {
-      for (let x = 0; x < 500; x += lineSize) {
+      for (let x = 0; x < 700; x += lineSize) {
         p.drawLine(x, y, lineSize, lineSize)
       }
     }
@@ -32,5 +37,11 @@ export default function Sketch (p) {
     }
   }
 
-  setInterval(p.draw, 5000)
+  function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+  }
+
+  setInterval(p.draw, 250)
 }
