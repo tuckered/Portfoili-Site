@@ -21,7 +21,22 @@ export default class Synth2 extends React.Component {
     }
   }
 
+  
   newSynth = () => {
+
+    // var autoFilter = new Tone.Autofilter ({
+    //   frequency: 1,
+    //   type: "sine",
+    //   depth: 1,
+    //   baseFrequency: 200,
+    //   octaves: 2.6,
+    //   filter: {
+    //     type: "lowpass",
+    //     rolloff: -12,
+    //     Q: 1
+    //   }
+    // }).toMaster()
+
     var synth = new Tone.MonoSynth({
       // "frequency": 'C4',
       "detune": 0,
@@ -35,33 +50,35 @@ export default class Synth2 extends React.Component {
 				"release" : this.state.releaseValue,
 			},
 			"filterEnvelope" : {
-        "attack" : 0.001,
+        "attack" : 0.3,
 				"decay" : 0.7,
 				"sustain" : 0.1,
 				"release" : 0.8,
 				"baseFrequency" : 300,
 				"octaves" : 4
 			}
-    }).toMaster()
+    }).master()
+
 
     const now = Tone.now()
     var pattern = new Tone.Pattern(function(time, note){
-      synth.triggerAttack(note);
+      synth.triggerAttackRelease(note);
     }, this.state.pattern, this.state.patternType)
+    Tone.Transport.start("+0.2")
     pattern.start(0.2)
     // Tone.context.latencyHint = 'playback'
-    Tone.Transport.start("+0.2")
     this.setState({ synth: synth, tone: Tone })
     
   }
 
   stopSynth = () => {
-    this.state.tone.Transport.stop()
-    this.state.synth.triggerRelease(0.2)
+    this.state.tone.Transport.stop("+0.2")
     this.setState({ pattern: [] })
+    debugger
+    this.state.synth.dispose()
   }
 
-  makeKeyboard  = (event) => {
+  makeKeyboard  = () => {
     return <div className="keyboard-container">
       <div className="note-div" onClick={this.handleChange}>C3</div>
       <div className="note-div" onClick={this.handleChange}>D3</div>

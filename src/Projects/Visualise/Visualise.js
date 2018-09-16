@@ -1,7 +1,8 @@
-// // import React from 'react'
+// import React from 'react'
 
-// // export default class Visualise extends React.Component
+// export default class Visualise extends React.Component
 // export default function Visualise(p) {
+
 
 //   let numbers = [];
 //   let count = 1;
@@ -149,5 +150,5 @@
 
 //   p.drawLeftTop = function (x, y, diameter, currStep) {
 //     p.arc(x, y, diameter, diameter, 0 - currStep, 0);
-//   }
+  // }
 // }

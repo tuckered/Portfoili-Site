@@ -1,16 +1,101 @@
-.main-section{
+
+.parallax {
+  margin: 0 auto;
   display: flex;
-  /* border: 2px solid green; */
-  height: 100vh;
-  /* background-image: url(pictures/nathaniel-dahan-534479-unsplash.jpg); */
-  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  background-image: url(trianglify2.png);
+  min-height: 100vh; 
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
-  justify-content: flex-start;
-  flex-direction: column;
+  background-size: cover;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-/* .white-container {
+.parallax2 {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(trianglify2.png);
+  min-height: 200px; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  background-image: url(trianglify2.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.nav-links {
+  border: 2px solid green;
+  padding-left: 2em;
+  padding-right: 2em;
+  font-size: 2em;
+  /* background-color: #929696; */
+}
+
+
+.landing-section{
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 94vh;
+}
+
+.ga-projects-section {
+  border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  height: 100vh;
+}
+
+.ga-img-section {
   border: 2px solid pink;
-  height: 75vh;
-  width: 45vw;
-} */ 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.ga-project-img {
+  border: 2px solid black;
+  width: 22rem;
+  height:20rem;
+  margin: 1em 0 1em 0;
+}
+
+.react-projects-section {
+  border: 2px solid yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  min-height: 100vh;
+}

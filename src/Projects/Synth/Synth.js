@@ -148,7 +148,7 @@ export default class Synth extends React.Component {
                 }
               },
               "color": {
-                "value": ["FFFFFF"],
+                "value": ["#000000"],
               },
               "shape": {
                 "type": ["circle"],
@@ -188,7 +188,7 @@ export default class Synth extends React.Component {
               "line_linked": {
                 "enable": true,
                 "distance": this.state.frequency / 2,
-                "color": "#ffffff",
+                "color": "#000000",
                 "opacity": 0.4,
                 "width": 2
               },
