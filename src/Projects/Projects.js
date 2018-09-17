@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom'
 
-import P5Wrapper from 'react-p5-wrapper'
+import P5Wrapper from '../P5Wrapper'
+// import P5Wrapper from 'react-p5-wrapper'
 import Tone from 'tone'
 import Home from '../Home'
 import './projects.css'

@@ -238,7 +238,7 @@ export default class Synth2 extends React.Component {
 
 
   render() {
-    return <div className="synth-container">
+    return <div className="synth2-container">
       <p className="pattern-display">Pattern:{this.state.pattern}</p>
       <div className="type-container">
         <this.patternType />

@@ -63,7 +63,7 @@ class App extends Component {
         <section className="contact-section">
         <div className="ga-headers-box">
           <h1 className="ga-h1" id="contact">Contact</h1>
-          <h3 className="ga-h3"><a href="">thomasalanwaters@gmail.com</a></h3>
+          <h3 className="ga-h3"><a href="mailto:thomasalanwaters@gmail.com ">thomasalanwaters@gmail.com</a></h3>
           <h3 className="ga-h3">
             <a href="https://github.com/tuckered" target="_blank">GitHub</a>
           </h3>

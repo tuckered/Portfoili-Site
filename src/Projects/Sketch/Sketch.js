@@ -4,9 +4,11 @@ import React from 'react'
 export default function Sketch (p) {
   const lineSize = 25
   // const lineSize = Math.random() * 25
+  let canvas = ''
 
   p.setup = function (){
-    p.createCanvas(700, 500)
+    canvas = p.createCanvas(700, 500)
+    canvas.class("sketch-canvas")
   }
   
   p.draw = function () {
@@ -35,12 +37,5 @@ export default function Sketch (p) {
       p.line(x + width, y, x, y + height)
     }
   }
-
-  function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
-  }
-
   setInterval(p.draw, 250)
 }

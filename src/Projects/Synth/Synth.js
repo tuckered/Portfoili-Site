@@ -4,9 +4,6 @@ import Tone from 'tone'
 import './synth.css'
 import Particles from 'react-particles-js';
 
-// import Sketch from './Sketch'
-// import Visualise from './Visualise'
-
 export default class Synth extends React.Component {
   
   constructor() {
@@ -132,9 +129,7 @@ export default class Synth extends React.Component {
         <button className="note-button" onClick={this.basicSynth}>A#3</button>
         <button className="note-button" onClick={this.basicSynth}>B3</button>
       </div>
-      <div className="stopBtn">
-        <button className="note-button" onClick={this.stopPlaying}>Stop</button>
-    </div>
+      
     <div className="particles-div">
     <Particles className="particles-box"
         params={
@@ -244,10 +239,13 @@ export default class Synth extends React.Component {
             "retina_detect": false
           }
         }
-        style={
-          { color: 'red', }
-        }
+        // style={
+        //   { color: 'red', }
+        // }
       />
+    </div>
+    <div className="stop-btn-container">
+      <button className="stop-btn" onClick={this.stopPlaying}>Stop Each Note</button>
     </div>
   </div>
   }
