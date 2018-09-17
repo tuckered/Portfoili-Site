@@ -10,30 +10,32 @@
 
 .headers-box {
   font-family: 'Poiret One', cursive;
-  color: white;
+  color: rgb(17, 46, 60);
+  /* color: rgb(255, 248, 240); */
   padding: 1em;
-  /* background-color: rgb(15,113,115); */
+  background-color: rgb(255, 248, 240);
   /* border: 2px solid rgb(35, 61, 77); */
 }
 
 .landing-h1 {
   font-size: 5em;
   font-weight: bold;
-  text-shadow:
+  /* text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
-    1px 1px 0 #000;  
+    1px 1px 0 #000;   */
 }
 
 .landing-h3 {
   font-size: 3em;
   font-weight: bold;
-  text-shadow:
+  text-align: right;
+  /* text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
-    1px 1px 0 #000;  
+    1px 1px 0 #000;   */
 } 
 
 .parallax {
@@ -93,6 +95,7 @@
   padding-left: 2em;
   padding-right: 2em;
   font-size: 2em;
+  font-weight: bold;
   width: 100vw;
   background-color: rgb(252, 196, 93);
   height: 3em;
@@ -101,7 +104,6 @@
 
 
 .landing-section{
-  border: 2px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,11 +170,27 @@
 }
 
 .react-projects-section {
-  /* border: 2px solid yellow; */
+  border-top: 10px solid rgb(252, 196, 93);
+  border-bottom: 10px solid rgb(252, 196, 93);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   flex-direction: column;
-  background-color: rgb(35, 61, 77);
-  min-height: 100vh;
+  background-color:rgb(17, 46, 60);
+  height: auto;
+}
+
+.contact-section {
+  border-top: 10px solid rgb(252, 196, 93);
+  border-bottom: 10px solid rgb(252, 196, 93);
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  flex-direction: column;
+  background-color:rgb(17 46 60);
+  height: auto;
+}
+
+.fab fa-linkedin {
+  font-size: 5em;
 }

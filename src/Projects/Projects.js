@@ -19,28 +19,25 @@ class Projects extends Component {
     return ( 
       <div className="Projects">
         <nav className="projects-nav" >
-          <div className="project-button">
-            <Link to="/projects/sketch">Sketch</Link>
-          </div>
-          <div className="project-button">
-            <Link to="/projects/synth">Synth</Link>
-          </div>
-          <div className="project-button">
-            <Link to="/projects/synth2">Synth2</Link>
-          </div>
-          <div className="project-button">
-            <Link to="/projects/particles">Particles</Link>
-          </div>
-          <div className="project-button">
-            <Link to="/projects/visualise">Visualise</Link>
-          </div>
-          <div className="project-button">
+          <div className="project-link">
             <Link to="/projects/todolist">TodoList</Link>
           </div>
-          <div className="project-button">
+          <div className="project-link">
+            <Link to="/projects/sketch">Sketch</Link>
+          </div>
+          <div className="project-link">
             <Link to="/projects/clock">Clock</Link>
           </div>
-          <div className="project-button">
+          <div className="project-link">
+            <Link to="/projects/synth">Synth</Link>
+          </div>
+          <div className="project-link">
+            <Link to="/projects/synth2">Arp</Link>
+          </div>
+          <div className="project-link">
+            <Link to="/projects/particles">Particles</Link>
+          </div>
+          <div className="project-link">
             <Link to="/projects/weather">Weather</Link>
           </div>
         </nav>
