@@ -2,7 +2,7 @@
   display: flex;
   border: 2px solid pink;
   height: 2em;
-  width: 100%;
+  width: 100vw;
   justify-content: space-evenly;
   align-content: center;
   /* color: white; */
@@ -21,13 +21,19 @@
   font-size: 0.6em;
   padding: 1px;
   font-family: 'Quattrocento', serif;
+  text-decoration: none;
+  border: 2px solid black;
+}
+
+.project-button:active {
+  border: 2px solid purple;
 }
 
 .project-container {
   display: flex;
   /* border: 5px solid black; */
   justify-content: center;
-  /* background-color: blue; */
+  background-color: white;
   width: 100%;
-  height: auto;
+  height: 90vh;
 }

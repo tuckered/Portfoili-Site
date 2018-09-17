@@ -44,7 +44,7 @@ class Projects extends Component {
             <Link to="/projects/weather">Weather</Link>
           </div>
         </nav>
-        <main className="project-container">
+        <main className="project-container" id="project-list">
           <Switch>
             <Route exact path="/projects/sketch" 
               render={ () => <P5Wrapper sketch={Sketch} /> } />

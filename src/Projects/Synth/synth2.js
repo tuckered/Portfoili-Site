@@ -1,6 +1,7 @@
 import React from 'react'
 import Tone from 'tone'
 import Keyboard from './Keyboard'
+import './synth2.css'
 
 export default class Synth2 extends React.Component {
 
@@ -57,7 +58,7 @@ export default class Synth2 extends React.Component {
 				"baseFrequency" : 300,
 				"octaves" : 4
 			}
-    }).master()
+    }).toMaster()
 
 
     const now = Tone.now()
@@ -108,8 +109,9 @@ export default class Synth2 extends React.Component {
 
   frequencyValue = () => {
     return <div className="freq-container">
-    <p>Pitch</p>
+    <p className="parameter-text">Pitch</p>
       <input 
+        className="slider"
         id="freq-slider" 
         type="range" 
         min="50" max="200" 
@@ -125,9 +127,9 @@ export default class Synth2 extends React.Component {
 
   patternType = () => {
     return <div className="pattern-container">
-    <p>pattern-Type</p>
+    <p>Pattern-Type</p>
       <form onSubmit={this.handleSubmit}>
-        <select value={this.state.value} onChange={this.handlepatternChange}>
+        <select className="menu-select"value={this.state.value} onChange={this.handlepatternChange}>
           <option value="up">Up</option>
           <option value="down">Down</option>
           <option value="upDown">Up-Down</option>
@@ -140,7 +142,7 @@ export default class Synth2 extends React.Component {
 
   handlePatternChange = (event) => {
     console.log(event.target.value)
-    this.setState({ patternType: event.target.value})
+    this.setState({ PatternType: event.target.value})
   }
 
   
@@ -148,7 +150,7 @@ export default class Synth2 extends React.Component {
     return <div className="wave-container">
     <p>Wave-Type</p>
       <form onSubmit={this.handleSubmit}>
-        <select value={this.state.value} onChange={this.handleWaveChange}>
+        <select className="menu-select" value={this.state.value} onChange={this.handleWaveChange}>
           <option value="sine">Sine</option>
           <option value="square">Square</option>
           <option value="triangle">Triangle</option>
@@ -169,9 +171,10 @@ export default class Synth2 extends React.Component {
 
   adsrValues = () => {
    return <div className="adsr-container">
-      <p>Attack</p>
+      <p className="parameter-text">Attack</p>
       <div className="slider-container">
-        <input 
+        <input
+        className="slider" 
         id="attack-slider" 
         type="range" 
         min="0" max="1" 
@@ -179,9 +182,10 @@ export default class Synth2 extends React.Component {
         onChange={this.handleAttackSliderChange}
         step="0.01"/>
       </div>
-      <p>Decay</p>
+      <p className="parameter-text">Decay</p>
       <div className="slider-container">
-        <input 
+        <input
+        className="slider" 
         id="decay-slider" 
         type="range" 
         min="0" max="1" 
@@ -189,9 +193,10 @@ export default class Synth2 extends React.Component {
         onChange={this.handleDecaySliderChange}
         step="0.01"/>
       </div>
-      <p>Sustain</p>
+      <p className="parameter-text">Sustain</p>
       <div className="slider-container">
-        <input 
+        <input
+        className="slider" 
         id="sustain-slider" 
         type="range" 
         min="0" max="1" 
@@ -199,9 +204,10 @@ export default class Synth2 extends React.Component {
         onChange={this.handleSustainSliderChange}
         step="0.01"/>
       </div>
-      <p>Release</p>
+      <p className="parameter-text">Release</p>
       <div className="slider-container">
-        <input 
+        <input
+        className="slider" 
         id="release-slider" 
         type="range" 
         min="0" max="1" 
@@ -233,12 +239,16 @@ export default class Synth2 extends React.Component {
 
   render() {
     return <div className="synth-container">
-      <p className="pattern-display">{this.state.pattern}</p>
-      <this.patternType />
+      <p className="pattern-display">Pattern:{this.state.pattern}</p>
+      <div className="type-container">
+        <this.patternType />
+        <this.waveType />
+      </div>
       <this.makeKeyboard />
-      <button onClick={this.newSynth}>Play</button>
-      <button onClick={this.stopSynth}>Stop</button>
-      <this.waveType />
+      <div className="button-container">
+        <button className="buttons" onClick={this.newSynth}>Play</button>
+        <button className="buttons" onClick={this.stopSynth}>Stop</button>
+      </div>
       <this.frequencyValue />
       <this.adsrValues />
     </div>

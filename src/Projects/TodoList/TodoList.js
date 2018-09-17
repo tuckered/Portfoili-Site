@@ -15,7 +15,6 @@ export default class TodoList extends React.Component {
   handleChange = (event) => {
     event.persist()
     this.setState(() => {
-      console.log(event.target.value)
       return { textInput: event.target.value }
     })
   }
@@ -35,20 +34,31 @@ export default class TodoList extends React.Component {
     console.log('uncompleted')
   }
 
+  deleteItem = (event) => {
+    if (event.target.className === "close") {
+      let div = this.parentElement
+      div.style.display = "none"
+    }
+  }
+
   render() {
     const { textInput } = this.state
     const listOutput = this.state.list.map((item) =>
-      <li className="uncompleted" onClick={this.toggleClass}> {item}
-      </li>
+      <div className="list-item">
+        <li className="uncompleted" onClick={this.toggleClass}>{item}<span className="close" onClick={this.deleteItem}>x</span></li>
+        
+      </div>
     )
-    return <div className="todo-page-container">
-      <h1 className="todo-h1">To-Do List...</h1>
-      <form className="search-container" onSubmit={this.handleSubmit} action="">
-        <input className="input-box" onChange={this.handleChange} type="text" value={textInput}/>
-      </form>
-      <ul className="todo-list-container">
-        {listOutput}
-      </ul>
-    </div>
+    return <div className="page-container">
+      {/* <div className="todo-container"> */}
+        <h1 className="todo-h1">To-Do List...</h1>
+        <form className="search-container" onSubmit={this.handleSubmit} action="">
+          <input className="input-box" onChange={this.handleChange} type="text" placeholder="...buy bananas"value={textInput}/>
+        </form>
+        <ul className="todo-list-container">
+          {listOutput}
+        </ul>
+      </div>
+    // </div>
   }
 }

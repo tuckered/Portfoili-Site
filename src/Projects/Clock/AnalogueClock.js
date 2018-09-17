@@ -9,15 +9,15 @@ export default class Clock extends React.Component {
   }
 
   componentDidMount() {
-    this.setTime()
-    this.interval = setInterval(this.setTime, 1000)
+    this.setAnalogueClock()
+    this.interval = setInterval(this.setAnalogueClock, 1000)
   }
 
   componentWillUnmount() {
     clearInterval(this.interval)
   }
 
-  setTime = () => {
+  setAnalogueClock = () => {
     let now = new Date()
     let second = now.getSeconds(0)
     let minute = now.getMinutes(0)
@@ -34,13 +34,13 @@ export default class Clock extends React.Component {
   render() {
     return <div className="clock-container">
       <div className="clock-face">
-        <div className="hourhand" 
+        <div className="hand hour-hand" 
           style={{transform: `rotate(${this.state.hoursDegrees}deg)`}}>
         </div>
-        <div className="minhand" 
+        <div className="hand min-hand" 
           style={{transform: `rotate(${this.state.minutesDegrees}deg)`}}>
         </div>
-        <div className="secondhand" 
+        <div className="hand second-shand" 
           style={{transform: `rotate(${this.state.secondsDegrees}deg)`}}>
         </div>
       </div>

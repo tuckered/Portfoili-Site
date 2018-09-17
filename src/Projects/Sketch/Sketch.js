@@ -17,7 +17,6 @@ export default function Sketch (p) {
     p.clear()
     p.strokeWeight(4)
     p.background(`rgb(${getRandomInt(255)}, ${getRandomInt(255)}, ${getRandomInt(255)})`)
-    console.log(getRandomInt(255))
     for (let y = 0; y < 500; y+= lineSize) {
       for (let x = 0; x < 700; x += lineSize) {
         p.drawLine(x, y, lineSize, lineSize)

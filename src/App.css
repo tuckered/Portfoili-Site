@@ -1,10 +1,47 @@
+/* slateblue: rgb(35, 61, 77)
+  purple: rgb(56, 2, 59)
+  cream:rgb(251, 245, 243)
+  white: 255 255 255
+  black: 0 0 0 
+
+*/
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+.headers-box {
+  font-family: 'Poiret One', cursive;
+  color: white;
+  padding: 1em;
+  /* background-color: rgb(15,113,115); */
+  /* border: 2px solid rgb(35, 61, 77); */
+}
+
+.landing-h1 {
+  font-size: 5em;
+  font-weight: bold;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+}
+
+.landing-h3 {
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+} 
 
 .parallax {
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(trianglify2.png);
+  background-image: url(guillaume-lebelt-209642-unsplash.jpg);
   min-height: 100vh; 
   background-attachment: fixed;
   background-position: center;
@@ -20,8 +57,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(trianglify2.png);
-  min-height: 200px; 
+  background-image: url(guillaume-lebelt-209642-unsplash.jpg);
+  min-height: 50vh; 
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -32,7 +69,7 @@
 }
 
 .main-container {
-  background-image: url(trianglify2.png);
+  background-image: url(guillaume-lebelt-209642-unsplash.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -48,11 +85,18 @@
 }
 
 .nav-links {
-  border: 2px solid green;
+  /* border: 2px solid green; */
+  font-family: 'Poiret One', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding-left: 2em;
   padding-right: 2em;
   font-size: 2em;
-  /* background-color: #929696; */
+  width: 100vw;
+  background-color: rgb(252, 196, 93);
+  height: 3em;
+  border-bottom: 2px solid rgb(35, 61, 77);
 }
 
 
@@ -66,36 +110,69 @@
 }
 
 .ga-projects-section {
-  border: 2px solid blue;
+  border-top: 10px solid rgb(252, 196, 93);
+  border-bottom: 10px solid rgb(252, 196, 93);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   flex-direction: column;
-  background-color: white;
-  height: 100vh;
+  background-color:rgb(17 46 60);
+  height: auto;
+}
+
+.ga-headers-box {
+  padding-left: 2em;
+  padding-top: 1em;
+  padding-right: 2em;
+}
+
+.ga-h1 {
+  font-family: 'Poiret One', cursive;
+  color: rgb(250, 248, 233);
+  font-weight: 600;
+  font-size: 4em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid white;
+  padding-bottom: 0.5em;
+}
+
+.ga-h3 {
+  font-family: 'Raleway', sans-serif;
+  color: rgb(255, 248, 240);
+  margin-bottom: 2em;
 }
 
 .ga-img-section {
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+  padding-bottom: 3em;
 }
 
 .ga-project-img {
   border: 2px solid black;
-  width: 22rem;
-  height:20rem;
+  opacity: 0.4;
+  width: 32rem;
+  height: 30rem;
+  margin: 1em 0 1em 0;
+  transition: 0.3s
+}
+
+.ga-project-img:hover {
+  opacity: 1;
+  width: 32rem;
+  height: 30rem;
   margin: 1em 0 1em 0;
 }
 
 .react-projects-section {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: white;
+  background-color: rgb(35, 61, 77);
   min-height: 100vh;
 }

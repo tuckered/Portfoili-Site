@@ -24,29 +24,23 @@ class App extends Component {
         <a href="#ga-projects" className="nav-links">Contact</a>
       </header>
         <section className="parallax">
-          <div className="header">
-            <h1>Thomas Waters</h1>
-            <h3>Full-Stack Developer</h3>
+          <div className="headers-box">
+            <h1 className="landing-h1">Thomas Waters</h1>
+            <h3 className="landing-h3">Full-Stack Developer</h3>
           </div>
-          {/* <Switch>
-            <Route exact path="/"
-              render={() => <Home />} />
-            <Route exact path="/about"
-              render={() => <About />} />
-            <Route exact path="/music"
-              render={() => <Music />} />
-            <Route path="/projects"
-              render={() => <Projects />} />
-          </Switch> */}
-          
         </section>
 
         <section className="ga-projects-section" id="ga-projects">
-          <h1>General Assembly Projects</h1>
-          <h3>These projects were done as part of my course Web Development Immersive course at General Assembly.</h3>
+        <div className="ga-headers-box">
+          <h1 className="ga-h1">General Assembly Projects</h1>
+          <h3 className="ga-h3">Projects completed as part of the Web Development Immersion course at General Assembly.</h3>
+        </div>
           <nav className="ga-img-section">
             <a href="https://tuckered.github.io/Tic-Tac-Toad/" target="_blank">
               <img className="ga-project-img" src="/images/tic-tac-toad.png" alt=""/>
+              <div className="toad-text-picture">
+                Tic-Tac-Toad stuff and stuff
+              </div>
             </a>
             <a href="https://mondaymorningmusic.herokuapp.com/" target="_blank">
               <img className="ga-project-img" src="/images/mondaymusic.png" alt=""/>
