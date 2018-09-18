@@ -1,13 +1,25 @@
 import React from 'react'
 import Tone from 'tone'
 import Keyboard from './Keyboard'
-import './synth2.css'
+import './arp.css'
 
-export default class Synth2 extends React.Component {
+export default class Arp extends React.Component {
+
+  // defaultState = {
+  //   attackValue: 0.5,
+  //   decayValue: 0.5,
+  //   sustainValue: 0.5,
+  //   releaseValue: 0.5,
+  //   synth: {},
+  //   frequency: 100,
+  //   pattern: [],
+  //   tone: ''
+  // }
 
   constructor() {
     super()
-    this.state = {
+    this.state = 
+    {
       attackValue: 0.5,
       decayValue: 0.5,
       sustainValue: 0.5,
@@ -16,29 +28,21 @@ export default class Synth2 extends React.Component {
       isPlaying: true,
       synth: {},
       waveType: "sine",
-      tone: '',
+      tone: {},
       pattern: [],
-      patternType: "up"
+      patternType: "up",
+      notes: [],
+      index: 0,
     }
   }
 
   
   newSynth = () => {
 
-    // var autoFilter = new Tone.Autofilter ({
-    //   frequency: 1,
-    //   type: "sine",
-    //   depth: 1,
-    //   baseFrequency: 200,
-    //   octaves: 2.6,
-    //   filter: {
-    //     type: "lowpass",
-    //     rolloff: -12,
-    //     Q: 1
-    //   }
-    // }).toMaster()
-
-    var synth = new Tone.MonoSynth({
+    var synth = new Tone.FMSynth(
+      {
+      "harmonicity": 3 ,
+      "modulationIndex": 10,
       // "frequency": 'C4',
       "detune": 0,
 			"oscillator" : {
@@ -54,7 +58,7 @@ export default class Synth2 extends React.Component {
         "attack" : 0.3,
 				"decay" : 0.7,
 				"sustain" : 0.1,
-				"release" : 0.8,
+				"release" : 0.80,
 				"baseFrequency" : 300,
 				"octaves" : 4
 			}
@@ -71,13 +75,19 @@ export default class Synth2 extends React.Component {
     this.setState({ synth: synth, tone: Tone })
     
   }
-
+  
   stopSynth = () => {
-    this.state.tone.Transport.stop("+0.2")
-    this.setState({ pattern: [] })
-    debugger
-    this.state.synth.dispose()
+    this.state.tone.Transport.stop()
+    // this.state.synth.cle()
+    this.setState({ synth: this.state.synth })
+    // debugger
+    // this.state.synth.dispose()
   }
+
+  clearPattern = () => {
+    this.setState({ pattern: [] })
+  }
+
 
   makeKeyboard  = () => {
     return <div className="keyboard-container">
@@ -171,8 +181,8 @@ export default class Synth2 extends React.Component {
 
   adsrValues = () => {
    return <div className="adsr-container">
-      <p className="parameter-text">Attack</p>
       <div className="slider-container">
+        <p className="parameter-text">Attack</p>
         <input
         className="slider" 
         id="attack-slider" 
@@ -182,8 +192,8 @@ export default class Synth2 extends React.Component {
         onChange={this.handleAttackSliderChange}
         step="0.01"/>
       </div>
-      <p className="parameter-text">Decay</p>
       <div className="slider-container">
+        <p className="parameter-text">Decay</p>
         <input
         className="slider" 
         id="decay-slider" 
@@ -193,8 +203,8 @@ export default class Synth2 extends React.Component {
         onChange={this.handleDecaySliderChange}
         step="0.01"/>
       </div>
-      <p className="parameter-text">Sustain</p>
       <div className="slider-container">
+        <p className="parameter-text">Sustain</p>
         <input
         className="slider" 
         id="sustain-slider" 
@@ -204,8 +214,8 @@ export default class Synth2 extends React.Component {
         onChange={this.handleSustainSliderChange}
         step="0.01"/>
       </div>
-      <p className="parameter-text">Release</p>
       <div className="slider-container">
+        <p className="parameter-text">Release</p>
         <input
         className="slider" 
         id="release-slider" 
@@ -238,7 +248,7 @@ export default class Synth2 extends React.Component {
 
 
   render() {
-    return <div className="synth2-container">
+    return <div className="arp-container">
       <p className="pattern-display">Pattern:{this.state.pattern}</p>
       <div className="type-container">
         <this.patternType />
@@ -247,6 +257,7 @@ export default class Synth2 extends React.Component {
       <this.makeKeyboard />
       <div className="button-container">
         <button className="buttons" onClick={this.newSynth}>Play</button>
+        <button className="buttons" onClick={this.clearPattern}>Clear</button>
         <button className="buttons" onClick={this.stopSynth}>Stop</button>
       </div>
       <this.frequencyValue />

@@ -5,7 +5,6 @@ export default class TodoList extends React.Component {
   
   constructor() {
     super()
-    // this.handeClick = this.handleClick.bind(this)
     this.state = {
       list: ["Do the washing up", "Get a Job", "Find the Meaning of Life"],
       textInput: ''
@@ -45,20 +44,18 @@ export default class TodoList extends React.Component {
     const { textInput } = this.state
     const listOutput = this.state.list.map((item) =>
       <div className="list-item">
-        <li className="uncompleted" onClick={this.toggleClass}>{item}<span className="close" onClick={this.deleteItem}>x</span></li>
-        
+        <li className="uncompleted" onClick={this.toggleClass}>{item} </li>
+        {/* <span className="close" onClick={this.deleteItem}>x</span> */}
       </div>
     )
     return <div className="page-container">
-      {/* <div className="todo-container"> */}
-        <h1 className="todo-h1">To-Do List...</h1>
-        <form className="search-container" onSubmit={this.handleSubmit} action="">
-          <input className="input-box" onChange={this.handleChange} type="text" placeholder="...buy bananas"value={textInput}/>
-        </form>
-        <ul className="todo-list-container">
-          {listOutput}
-        </ul>
-      </div>
-    // </div>
+      <h1 className="todo-h1">To-Do List...</h1>
+      <form className="search-container" onSubmit={this.handleSubmit} action="">
+        <input className="input-box" onChange={this.handleChange} type="text" placeholder="...buy bananas"value={textInput}/>
+      </form>
+      <ul className="todo-list-container">
+        {listOutput}
+      </ul>
+    </div>
   }
 }

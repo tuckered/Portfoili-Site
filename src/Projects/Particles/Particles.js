@@ -1,18 +1,19 @@
 import React from 'react'
-import Particles from 'react-particles-js';
+import Particles from 'react-particles-js'
+import './particles.css'
 
  
 export default class Dots extends React.Component {
   
 
   render() {
-    return (<div>
-      <Particles
+    return <div className="particle-wrapper">
+      <Particles className = "particles-container"
         params={
           {
             "particles": {
               "number": {
-                "value": 30,
+                "value": 50,
                 "density": {
                   "enable": false,
                   "value_area": 0
@@ -30,18 +31,13 @@ export default class Dots extends React.Component {
                 "polygon": {
                   "nb_sides": 5
                 },
-                "image": {
-                  "src": "img/github.svg",
-                  "width": 100,
-                  "height": 100
-                }
               },
               "opacity": {
                 "value": 0.5,
                 "random": false,
                 "anim": {
                   "enable": false,
-                  "speed": 1,
+                  "speed": 2,
                   "opacity_min": 0.1,
                   "sync": false
                 }
@@ -51,7 +47,7 @@ export default class Dots extends React.Component {
                 "random": true,
                 "anim": {
                   "enable": false,
-                  "speed": 80,
+                  "speed": 50,
                   "size_min": 0.1,
                   "sync": true
                 }
@@ -65,7 +61,7 @@ export default class Dots extends React.Component {
               },
               "move": {
                 "enable": true,
-                "speed": 10,
+                "speed": 5,
                 "direction": "none",
                 "random": false,
                 "straight": false,
@@ -86,14 +82,14 @@ export default class Dots extends React.Component {
                   "mode": "repulse"
                 },
                 "onclick": {
-                  "enable": false,
+                  "enable": true,
                   "mode": "bubble"
                 },
                 "resize": true,
               },
               "modes": {
                 "grab": {
-                  "distance": 800,
+                  "distance": 500,
                   "line_linked": {
                     "opacity": 1
                   }
@@ -124,7 +120,7 @@ export default class Dots extends React.Component {
           { width: '100%', }
         }
       />
-    </div>)
+    </div>
   }
 }
 

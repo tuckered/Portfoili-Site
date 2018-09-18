@@ -1,6 +1,7 @@
-.synth2-container {
+.arp-container {
 /* border: 2px solid red; */
 height: 100%;
+background-color: rgb(255, 248, 240)
 }
 
 .pattern-display {
@@ -8,17 +9,22 @@ height: 100%;
 }
 
 .keyboard-container {
+  height: 7em;
+  padding: 2em;
+  padding-top: 0;
   padding-bottom: 2em;
 }
 
 .note-div {
-  height: 10vh;
+  height: 9vh;
   border-radius: 3px;
+  box-shadow: 0px 4px 5px black;
+  transition: 0.1s;
 }
 
 .note-div:active {
-  height: 9vh;
-  box-shadow: 0px 4px 5px black;
+  height: 9.5vh;
+  box-shadow: 0px 0px 1px black;
 }
 
 .button-container {
@@ -61,6 +67,10 @@ height: 100%;
   padding: 1em 0 2em 0;
 }
 
+.slider-container {
+  padding-left: 2em;
+  padding-right: 2em;
+}
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -93,8 +103,4 @@ height: 100%;
   border-radius: 50%;
   background: #4CAF50;
   cursor: pointer;
-}
-
-.slider-container {
-
 }

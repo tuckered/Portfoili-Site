@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import Forecast from './Forecast'
+// import Forecast from './Forecast'
 import './weather.css'
 
 export default class Weather extends React.Component {
@@ -8,10 +8,12 @@ export default class Weather extends React.Component {
   constructor() {
     super()
     this.state = {
-      description: 'partly cloudy',
-      temp: '13',
-      location: 'northcote',
-      icon: "04n"
+      loading: false,
+      description: "",
+      temp: "",
+      location: "",
+      icon: "",
+      response: ''
     }
   }
 
@@ -35,29 +37,44 @@ export default class Weather extends React.Component {
         var temp = response.data.main.temp.toFixed(0)
         var location = response.data.name
         var icon = response.data.weather[0].icon
-
+        console.log('hi')
         this.setState(() => {
           return {
             description,
             temp,
             location,
-            icon
+            icon,
+            loading: false,
+            response: true
           }
         })
       })
     })
   }
 
-  render() {
-    return <div className="weatherContainer">
-      <button className="weatherBtn" onClick={ this.weather }>Today's Weather</button>
-      <p className="card-location">{this.state.location}:</p>
+
+  weatherCard = () => {
+    const city = this.state.location.replace(/^\w/, c => c.toUpperCase());
+    const summary = this.state.description.replace(/^\w/, c => c.toUpperCase())
+    return (
       <div className="card-weather">
-        <p className="card-description">{this.state.description}</p>
-        <p className="card-temp">{this.state.temp}°C</p>
+        <p className="card-location">{city}</p>
         <img className="weather-img" src={`http://openweathermap.org/img/w/${this.state.icon}.png`}></img>
+        <p className="card-temp">{this.state.temp}°C</p>
+        <p className="card-description">{summary}</p>
       </div>
-      <Forecast />
+    ) 
+  }
+
+  render() {
+
+    return <div className="weather-wrapper">
+        <button className="weather-btn" onClick={ this.weather }>Check the weather?</button>
+        <div className="weather-container">
+          {this.state.response ? <this.weatherCard /> 
+          : <p></p>
+          } 
+      </div>
     </div>
   }
 }

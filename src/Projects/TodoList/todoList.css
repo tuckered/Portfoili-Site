@@ -26,7 +26,7 @@
   display: flex;
   flex-direction: column;
   border-top: 2px solid black;
-  /* align-content: center; */
+  align-content: center;
   vertical-align: middle;
   height: 100%;
   width: 100%;
@@ -85,13 +85,13 @@
 }
 
 .completed:hover {
-  box-shadow: 0 0 11px rgba(81, 203, 238, 1);
-  transform: translateY(-0.25em);
+  box-shadow: 0 0 11px rgb(49, 124, 145);
+  transform: translateY(-0.10em);
 }
 
 .uncompleted:hover {
-  box-shadow: 0 0 11px rgba(81, 203, 238, 1);
-  transform: translateY(-0.25em);
+  box-shadow: 0 0 11px rgb(38, 95, 111);
+  transform: translateY(-0.20em);
 }
 
 .close {

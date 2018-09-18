@@ -1,6 +1,6 @@
 import React from 'react'
 import Tone from 'tone'
-import Synth2 from './synth2'
+import Arp from './Arp'
 import './keyboard.css'
 
 export default class Keyboard extends React.Component {

@@ -1,0 +1,7 @@
+.particles-container {
+  padding-top: 2em;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.591);
+  height: 80%;
+  /* width: 80%; */
+}

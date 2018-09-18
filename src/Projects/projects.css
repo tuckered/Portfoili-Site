@@ -27,11 +27,14 @@
   text-align: center;
   vertical-align: center;
   padding-top: 0.2em;
+  transition: 0.3s;
 }
 
 .project-link:hover {
-  border: 2px solid rgb(252, 196, 93)
+  border: 2px solid rgb(252, 196, 93);
+  background-color: rgb(252, 196, 93);
 }
+
 
 .project-container {
   display: flex;

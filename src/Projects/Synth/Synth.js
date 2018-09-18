@@ -180,7 +180,7 @@ export default class Synth extends React.Component {
                 "distance": this.state.frequency / 2,
                 "color": "#000000",
                 "opacity": 0.4,
-                "width": 2
+                "width": 1,
               },
               "move": {
                 "enable": true,

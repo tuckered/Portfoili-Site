@@ -1,40 +1,83 @@
-.weatherContainer {
-  background-color: rgba(255, 255, 255, 0.781);
-  /* display: flex;
-  flex-direction: row; */
-  /* border: 5px solid black; */
+.weather-wrapper {
+  background-color: rgb(255, 248, 240);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: 80vh;
+  width: 35vw;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: 50vh;
+  width: 30vw;
+  margin: auto;
+  margin-bottom: 2em;
 }
   
+.weather-btn {
+  font-family: 'Raleway', sans-serif;
+  background-color: rgb(255, 248, 240);
+  border: none;
+  box-shadow: 1px 1px 3px rgb(0, 0, 0);
+  outline: none;
+  font-size: 2.5vw;
+  padding: 0.5em;
+  width: auto;
+  margin: auto;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  transition: 0.4s;
+}
+
+.weather-btn:hover {
+  background-color: rgb(44, 153, 237);
+  color: white;
+  border-radius: 3px;
+  box-shadow: 2px 5px 5px rgb(29, 94, 143);
+}
+
 .card-weather {
-  border: 5px solid black;
+  font-family: 'Raleway', sans-serif;
+  background-color: rgb(44, 153, 237);
+  box-shadow: 2px 5px 5px rgb(29, 94, 143);
+  border-radius: 5px;
+  color: rgb(255, 248, 240);
   display: flex;
   text-align: center;
   flex-direction: column;
-  width: 10em;
+  width: 80%;
+  height: 100%;
   padding: 1em;
+  margin: auto;
 }
  
 .card-location {
-
-}
-
-.card-description {
-  /* border: 1px solid black; */
-  margin: auto;
-}
-
-.card-temp {
-  /* border: 1px solid blue; */
-  padding-top: 0.7em;
-  margin: auto;
+  font-size: 4vw;
 }
 
 .weather-img {
-  width: 5em;
-  height: auto;
+  width: 50%;
   margin: auto;
-  /* border: 1px solid green; */
+  font-size: 50px;
+  margin-bottom: 0;
 }
+
+.card-temp {
+  margin: auto;
+  font-size: 5vw;
+}
+
+.card-description {
+  margin: auto;
+  font-size: 2vw;
+}
+
+
+
+
 
 /* .card-date {
 
