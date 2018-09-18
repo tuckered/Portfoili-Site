@@ -6,8 +6,8 @@ import Tone from 'tone'
 import Home from './Home'
 import About from './About'
 import Projects from './Projects/Projects'
-import Music from './Music'
 import './App.css'
+
 // import './grid-layout.css'
 
 class App extends Component {
@@ -42,18 +42,21 @@ class App extends Component {
           <h3 className="ga-h3">Projects completed as part of the Web Development Immersion course at General Assembly.</h3>
         </div>
         <nav className="ga-img-section">
-          <a href="https://tuckered.github.io/Tic-Tac-Toad/" target="_blank">
-            <img className="ga-project-img" src="/images/tic-tac-toad.png" alt=""/>
-            <div className="toad-text-picture">
-              Tic-Tac-Toad stuff and stuff
-            </div>
-          </a>
-          <a href="https://mondaymorningmusic.herokuapp.com/" target="_blank">
-            <img className="ga-project-img" src="/images/mondaymusic.png" alt=""/>
-          </a>
-          <a href="https://peaceful-eyrie-47803.herokuapp.com/" target="_blank">
-            <img className="ga-project-img" src="/images/socialfretwork.png" alt=""/>
-          </a>
+          <a href="https://tuckered.github.io/Tic-Tac-Toad/" target="_blank"></a>
+          <div className="tic-tac-toad-img"></div>
+          <h1 className="ga-img-header">Tic-Tac-Toad</h1>
+          <p className="ga-img-p">A simple browser game of Tic-Tac-Toe written using HTML, CSS and JS.</p>
+
+          <a href="https://mondaymorningmusic.herokuapp.com/" target="_blank"></a>
+            <div className="monday-morning-music-img"></div>
+            <h1 className="ga-img-header">Monday Morning Music</h1>
+            <p className="ga-img-p">A music sharing site where users can log in and share music via YouTube. Users can like and comment on songs they enjoy. All 'liked' songs appear in the user's personalised playlist</p>
+          
+          <a href="https://social-fretwork.herokuapp.com/" target="_blank"></a>
+          <div className="social-fretwork-img"></div>
+          <h1 className="ga-img-header">Social-Fretwork</h1>
+          <p className="ga-img-p">Do you need music for a party or event? Search a range of artists to see who you like or create a job listing and have the muso contact you.</p>
+         
         </nav>
       </section>
 
@@ -62,7 +65,7 @@ class App extends Component {
       <section className="react-projects-section" id="react-projects">
         <div className="ga-headers-box">
           <h1 className="ga-h1">React Projects</h1>
-          <h3 className="ga-h3">A collection of projects I did to explore and teach myself React at the same time.</h3>
+          <h3 className="ga-h3">A collection of projects to explore and teach myself React at the same time.</h3>
         </div>
         <Projects />
       </section>

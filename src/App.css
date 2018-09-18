@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(guillaume-lebelt-209642-unsplash.jpg);
+  background-image: url(./images/guillaume-lebelt-209642-unsplash.jpg);
   min-height: 100vh; 
   background-attachment: fixed;
   background-position: center;
@@ -42,7 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(guillaume-lebelt-209642-unsplash.jpg);
+  background-image: url(./images/guillaume-lebelt-209642-unsplash.jpg);
   min-height: 50vh; 
   background-attachment: fixed;
   background-position: center;
@@ -54,7 +54,7 @@
 }
 
 .main-container {
-  background-image: url(guillaume-lebelt-209642-unsplash.jpg);
+  background-image: url(./images/guillaume-lebelt-209642-unsplash.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -114,6 +114,7 @@
   flex-direction: column;
   background-color:rgb(17 46 60);
   height: auto;
+  margin: auto;
 }
 
 .ga-headers-box {
@@ -128,7 +129,7 @@
   font-weight: 600;
   font-size: 4em;
   margin-bottom: 0.5em;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid rgb(255, 248, 240);
   padding-bottom: 0.5em;
 }
 
@@ -138,30 +139,79 @@
   margin-bottom: 2em;
 }
 
-.ga-img-section {
-  /* border: 2px solid pink; */
+/* .project-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+} */
+
+.ga-img-section {
+  border: 2px solid pink;
+  font-family: 'Raleway', sans-serif;
+  /* display: flex;
+  flex-direction: column; */
   width: 100%;
   padding-bottom: 3em;
+  padding-left: 5em;
+  text-align: center;
+
 }
 
-.ga-project-img {
+.tic-tac-toad-img {
+  background-image: url(./tic-tac-toad.png);
+}  
+
+.monday-morning-music-img {
+  background-image: url(./mondaymusic.png);
+}
+
+.social-fretwork-img {
+  background-image: url(./socialfretwork.png);
+}
+
+.tic-tac-toad-img, 
+.monday-morning-music-img, 
+.social-fretwork-img  {
   border: 2px solid black;
-  opacity: 0.4;
-  width: 32rem;
-  height: 30rem;
-  margin: 1em 0 1em 0;
-  transition: 0.3s
+  opacity: 0.6;
+  width: 50vw;
+  height: 35rem;
+  transition: 0.3s;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  padding-bottom: 1em;
+  margin: auto;
+  margin-top: 3em;
 }
 
-.ga-project-img:hover {
+.tic-tac-toad-img:hover, .monday-morning-music-img:hover, .social-fretwork-img:hover {
+  border: 2px solid black;
   opacity: 1;
-  width: 32rem;
-  height: 30rem;
-  margin: 1em 0 1em 0;
+  width: 50vw;
+  height: 35rem;
+  /* margin: 1em 0 1em 0; */
+  transition: 0.3s;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: fill;
 }
+
+.ga-img-header {
+  color: rgb(255, 248, 240);
+  font-size: 3em;
+  transition: 0.3s;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.ga-img-p {
+  color: rgb(255, 248, 240);
+  font-size: 1.7em;
+  text-decoration: none;
+  border-bottom: 3px solid rgb(255, 248, 240);
+  width: 60%;
+  margin: auto;
+}
+
 
 .react-projects-section {
   border-top: 10px solid rgb(252, 196, 93);
