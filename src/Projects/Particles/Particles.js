@@ -13,7 +13,7 @@ export default class Dots extends React.Component {
           {
             "particles": {
               "number": {
-                "value": 50,
+                "value": 60,
                 "density": {
                   "enable": false,
                   "value_area": 0
@@ -29,7 +29,7 @@ export default class Dots extends React.Component {
                   "color": "#000000"
                 },
                 "polygon": {
-                  "nb_sides": 5
+                  "nb_sides": 4
                 },
               },
               "opacity": {
@@ -99,7 +99,7 @@ export default class Dots extends React.Component {
                   "size": 10,
                   "duration": 2,
                   "opacity": 0.8,
-                  "speed": 1
+                  "speed": 2
                 },
                 "repulse": {
                   "distance": 400,

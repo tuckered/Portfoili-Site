@@ -39,7 +39,7 @@ export default class Arp extends React.Component {
   
   newSynth = () => {
 
-    var synth = new Tone.FMSynth(
+    var synth = new Tone.MonoSynth(
       {
       "harmonicity": 3 ,
       "modulationIndex": 10,
@@ -88,7 +88,6 @@ export default class Arp extends React.Component {
     this.setState({ pattern: [] })
   }
 
-
   makeKeyboard  = () => {
     return <div className="keyboard-container">
       <div className="note-div" onClick={this.handleChange}>C3</div>
@@ -111,7 +110,6 @@ export default class Arp extends React.Component {
 
   handleChange = (event) => {
     event.persist()
-    console.log(event.target.textContent)
     this.setState((prevState) => {
       return { pattern: [...prevState.pattern, event.target.textContent] }    
     })
@@ -151,7 +149,6 @@ export default class Arp extends React.Component {
   }
 
   handlePatternChange = (event) => {
-    console.log(event.target.value)
     this.setState({ PatternType: event.target.value})
   }
 
@@ -171,7 +168,6 @@ export default class Arp extends React.Component {
   }
   
   handleWaveChange = (event) => {
-    console.log(event.target.value)
     this.setState({ waveType: event.target.value})
   }
 
@@ -249,19 +245,17 @@ export default class Arp extends React.Component {
 
   render() {
     return <div className="arp-container">
-      <p className="pattern-display">Pattern:{this.state.pattern}</p>
       <div className="type-container">
         <this.patternType />
         <this.waveType />
       </div>
       <this.makeKeyboard />
+      <p className="pattern-display">Pattern:{this.state.pattern}</p>
       <div className="button-container">
         <button className="buttons" onClick={this.newSynth}>Play</button>
         <button className="buttons" onClick={this.clearPattern}>Clear</button>
         <button className="buttons" onClick={this.stopSynth}>Stop</button>
       </div>
-      <this.frequencyValue />
-      <this.adsrValues />
     </div>
   }
 }
