@@ -48,9 +48,9 @@ class App extends Component {
           <p className="ga-img-p">A simple browser game of Tic-Tac-Toe written using HTML, CSS and JS.</p>
 
           <a href="https://mondaymorningmusic.herokuapp.com/" target="_blank"></a>
-            <div className="monday-morning-music-img"></div>
-            <h1 className="ga-img-header">Monday Morning Music</h1>
-            <p className="ga-img-p">A music sharing site where users can log in and share music via YouTube. Users can like and comment on songs they enjoy. All 'liked' songs appear in the user's personalised playlist</p>
+          <div className="monday-morning-music-img"></div>
+          <h1 className="ga-img-header">Monday Morning Music</h1>
+          <p className="ga-img-p">A music sharing site where users can log in and share music via YouTube. Users can like and comment on songs they enjoy. All 'liked' songs appear in the user's personalised playlist</p>
           
           <a href="https://social-fretwork.herokuapp.com/" target="_blank"></a>
           <div className="social-fretwork-img"></div>

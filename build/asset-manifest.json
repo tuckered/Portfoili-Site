@@ -1,7 +1,10 @@
 {
-  "main.css": "static/css/main.7eeb86b2.css",
-  "main.css.map": "static/css/main.7eeb86b2.css.map",
-  "main.js": "static/js/main.99f15149.js",
-  "main.js.map": "static/js/main.99f15149.js.map",
-  "static/media/guillaume-lebelt-209642-unsplash.jpg": "static/media/guillaume-lebelt-209642-unsplash.a54379ce.jpg"
+  "main.css": "static/css/main.3bc31aab.css",
+  "main.css.map": "static/css/main.3bc31aab.css.map",
+  "main.js": "static/js/main.89a5a5e9.js",
+  "main.js.map": "static/js/main.89a5a5e9.js.map",
+  "static/media/guillaume-lebelt-209642-unsplash.jpg": "static/media/guillaume-lebelt-209642-unsplash.a54379ce.jpg",
+  "static/media/mondaymusic.png": "static/media/mondaymusic.07d526d1.png",
+  "static/media/socialfretwork.png": "static/media/socialfretwork.399c134f.png",
+  "static/media/tic-tac-toad.png": "static/media/tic-tac-toad.35f1e786.png"
 }

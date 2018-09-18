@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-// import Forecast from './Forecast'
 import './weather.css'
 
 export default class Weather extends React.Component {
@@ -19,7 +18,7 @@ export default class Weather extends React.Component {
 
   weather = () => {
     var lat, lon
-    var openWeatherMap = 'http://api.openweathermap.org/data/2.5/weather'
+    var openWeatherMap = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather`
     navigator.geolocation.getCurrentPosition((position) => {
       
       lat = position.coords.latitude
@@ -37,7 +36,6 @@ export default class Weather extends React.Component {
         var temp = response.data.main.temp.toFixed(0)
         var location = response.data.name
         var icon = response.data.weather[0].icon
-        console.log('hi')
         this.setState(() => {
           return {
             description,

@@ -4,10 +4,8 @@
 .headers-box {
   font-family: 'Poiret One', cursive;
   color: rgb(17, 46, 60);
-  /* color: rgb(255, 248, 240); */
   padding: 1em;
   background-color: rgb(255, 248, 240);
-  /* border: 2px solid rgb(35, 61, 77); */
 }
 
 .landing-h1 {
@@ -61,7 +59,6 @@
   background-size: cover; 
 }
 
-
 .header-container {
   display: flex;
   flex-direction: row;
@@ -70,7 +67,6 @@
 }
 
 .nav-links {
-  /* border: 2px solid green; */
   font-family: 'Poiret One', cursive;
   display: flex;
   justify-content: center;
@@ -85,7 +81,6 @@
   border-bottom: 2px solid rgb(35, 61, 77);
 }
 
-
 .landing-section{
   display: flex;
   justify-content: center;
@@ -98,8 +93,6 @@
   border-top: 10px solid rgb(252, 196, 93);
   border-bottom: 10px solid rgb(252, 196, 93);
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
   flex-direction: column;
   background-color:rgb(17 46 60);
   height: auto;
@@ -109,8 +102,6 @@
   border-top: 10px solid rgb(252, 196, 93);
   border-bottom: 10px solid rgb(252, 196, 93);
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
   flex-direction: column;
   background-color:rgb(17 46 60);
   height: auto;
@@ -139,15 +130,8 @@
   margin-bottom: 2em;
 }
 
-/* .project-wrapper {
-  display: flex;
-} */
-
 .ga-img-section {
-  border: 2px solid pink;
   font-family: 'Raleway', sans-serif;
-  /* display: flex;
-  flex-direction: column; */
   width: 100%;
   padding-bottom: 3em;
   padding-left: 5em;
@@ -183,12 +167,13 @@
   margin-top: 3em;
 }
 
-.tic-tac-toad-img:hover, .monday-morning-music-img:hover, .social-fretwork-img:hover {
+.tic-tac-toad-img:hover, 
+.monday-morning-music-img:hover, 
+.social-fretwork-img:hover {
   border: 2px solid black;
   opacity: 1;
   width: 50vw;
   height: 35rem;
-  /* margin: 1em 0 1em 0; */
   transition: 0.3s;
   background-position: center;
   background-repeat: no-repeat;
@@ -217,8 +202,6 @@
   border-top: 10px solid rgb(252, 196, 93);
   border-bottom: 10px solid rgb(252, 196, 93);
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
   flex-direction: column;
   background-color:rgb(17, 46, 60);
   height: auto;
@@ -228,8 +211,6 @@
   border-top: 10px solid rgb(252, 196, 93);
   border-bottom: 10px solid rgb(252, 196, 93);
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
   flex-direction: column;
   background-color:rgb(17 46 60);
   height: auto;
