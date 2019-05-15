@@ -7,7 +7,7 @@ HTML, CSS, JS, React, React Router, P5.js. Tone.js, Particle.js, OpenWeather API
 
 ## Projects
 
- In the site I included links to my other GA projects, which are all available to view on GtiHub. Where things got really fun though was when I started making things specifically in React. I made a number of apps: 
+ In the site I included links to my other GA projects, which are all available to view on GitHub. Where things got really fun though was when I started making things specifically in React. I made a number of apps: 
 
 1. **Todo List:** A bright and simple todo list. Add items or cross them off. 
 2. **Sketch:** Using [P5.js](https://p5js.org/) to continuously create a random sketch with a random colour. P5 doesn't play nicely with React because of how it manipulates the DOM so I had to use a P5wrapper to make it work. 
